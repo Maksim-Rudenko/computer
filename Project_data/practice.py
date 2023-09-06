@@ -5,6 +5,6 @@ import seaborn as sns
 
 df = pd.read_csv('Data_fashion.csv')
 
-print(df.head())
+# print(df.head())
 
-
+print(df.info())
