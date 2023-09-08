@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 data = pd.read_csv('world_pop.csv')
 
-print(data.info())
+#print(data.info())
 
 # Удалим ненужный столбец
 data.drop(labels=['Unnamed: 0'], axis=1, inplace=True)
@@ -61,3 +61,26 @@ def filling_missing_data(df=data):
                     # null_data = null_data.replace({col: 0}, West_Bank_and_Gaza_population[i_3])
                     df = df.replace({col: 0}, West_Bank_and_Gaza_population[i_3])
                     i_3 += 1
+
+filling_missing_data()
+
+# Суммируем значения, чтобы получить население для мира в целом (данные в конце DataFrame отдельной строкой)
+data.loc[len(data.index)] = data.sum()
+data = data.replace(data['country'][len(data.index) - 1], 'Total')
+
+# создаем отдельный лист со значениями итого по годам (для удобства)
+world_population_by_year = data.loc[len(data.index) - 1].tolist()
+del world_population_by_year[0] # здесь удалили 'Total', которое присутствует в списке
+
+x = [i for i in range(len(data.columns) - 1)] # чтобы каждому значению из упоряд. списка соотв. значение и d
+plt.plot(x, world_population_by_year)
+
+plt.xlabel("Year")
+plt.ylabel("Population")
+
+plt.title("World population by year")
+
+# заменяем х на годы
+plt.xticks(x, [year for year in range(1960, 2021)])
+plt.locator_params(axis='x', nbins=10) # ограничивает кол-во отображаемых тиков на оси
+plt.show()
