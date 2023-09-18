@@ -1,0 +1,151 @@
+Rank ,City,State,"Land area, km2","Water area, km2","Total area, km2",Population (2020)
+1,Sitka,Alaska,7434.0,5038.0,12471.0,8458
+2,Juneau,Alaska,7003.0,1426.0,8430.0,32255
+3,Wrangell,Alaska,6620.0,2384.0,9004.0,2127
+4,Anchorage,Alaska,4421.0,621.0,5042.0,291247
+5,Tribune,Kansas,2016.0,0.0,2016.0,1182
+6,Jacksonville,Florida,1935.0,329.0,2265.0,949611
+7,Anaconda,Montana,1908.0,12.0,1920.0,9421
+8,Butte,Montana,1854.0,1.6,1855.0,34494
+9,Houston,Texas,1659.0,81.0,1740.0,2304580
+10,Oklahoma City,Oklahoma,1570.0,37.0,1607.0,681054
+11,Phoenix,Arizona,1342.0,2.8,1344.0,1608139
+12,San Antonio,Texas,1292.0,15.0,1307.0,1434625
+13,Nashville,Tennessee,1232.0,56.0,1289.0,689447
+14,Los Angeles,California,1216.0,83.0,1299.0,3898747
+15,Statenville,Georgia,1089.0,0.78,1090.0,3697
+16,Suffolk,Virginia,1034.0,77.0,1111.0,94324
+17,Buckeye,Arizona,1018.0,0.52,1018.0,91502
+18,Indianapolis ,Indiana,937.0,16.0,953.0,887642
+19,Fort Worth,Texas,900.0,21.0,921.0,918915
+20,Dallas,Texas,880.0,114.0,993.0,1304379
+21,Chesapeake,Virginia,877.0,32.0,909.0,249422
+22,San Diego,California,844.0,120.0,965.0,1386932
+23,Louisville ,Kentucky,841.0,43.0,884.0,633045
+24,Austin,Texas,829.0,17.0,846.0,961855
+25,Kansas City,Missouri,815.0,11.0,826.0,508090
+26,Charlotte,North Carolina,798.0,5.2,804.0,874579
+27,Augusta ,Georgia,783.0,11.0,794.0,202081
+28,New York City,New York,778.0,445.0,1224.0,8804190
+29,Memphis,Tennessee,769.0,20.0,789.0,633104
+30,Lexington,Kentucky,735.0,4.9,739.0,322570
+31,El Paso,Texas,669.0,2.1,671.0,678815
+32,Macon,Georgia,646.0,14.0,660.0,157346
+33,Cusseta,Georgia,644.0,6.2,651.0,9565
+34,Virginia Beach,Virginia,634.0,655.0,1289.0,459470
+35,Tucson,Arizona,624.0,0.78,625.0,542629
+36,Chicago,Illinois,590.0,18.0,607.0,2746388
+37,Columbus,Ohio,570.0,15.0,585.0,905748
+38,Huntsville,Alabama,565.0,3.6,569.0,215006
+39,Columbus,Georgia,561.0,12.0,572.0,206922
+40,Valdez,Alaska,551.0,153.0,704.0,3985
+41,Preston ,Georgia,543.0,2.3,545.0,2348
+42,Boulder City,Nevada,539.0,0.0,539.0,14885
+43,California City,California,527.0,0.26,528.0,14973
+44,Tulsa,Oklahoma,512.0,11.0,522.0,413066
+45,Colorado Springs,Colorado,506.0,1.0,507.0,478961
+46,Goodyear,Arizona,495.0,0.0,495.0,95294
+47,Albuquerque,New Mexico,485.0,4.4,490.0,564559
+48,Scottsdale,Arizona,477.0,1.0,478.0,241361
+49,Hibbing,Minnesota,471.0,11.0,483.0,16214
+50,Norman,Oklahoma,463.0,27.0,490.0,128026
+51,San Jose,California,462.0,8.0,470.0,1013240
+52,Peoria,Arizona,456.0,8.3,464.0,190985
+53,New Orleans,Louisiana,439.0,467.0,906.0,383997
+54,Corpus Christi,Texas,420.0,850.0,1270.0,317863
+55,Wichita,Kansas,420.0,12.0,431.0,397532
+56,Aurora,Colorado,415.0,1.6,416.0,386261
+57,Montgomery,Alabama,414.0,6.2,420.0,200603
+58,Denver,Colorado,397.0,4.4,401.0,715522
+59,Sierra Vista,Arizona,394.0,0.78,395.0,45308
+60,Georgetown,Georgia,392.0,24.0,416.0,2235
+61,Bakersfield,California,388.0,3.9,392.0,403455
+62,Fayetteville,North Carolina,384.0,4.7,389.0,208501
+63,Raleigh,North Carolina,381.0,2.8,384.0,467665
+64,Birmingham,Alabama,381.0,6.5,387.0,200733
+65,Carson City,Nevada,374.0,33.0,407.0,58639
+66,Chattanooga,Tennessee,369.0,20.0,389.0,181099
+67,Las Vegas,Nevada,367.0,0.26,368.0,641903
+68,Omaha,Nebraska,367.0,9.3,376.0,486051
+69,Bunnell,Florida,362.0,0.26,362.0,3276
+70,Mobile,Alabama,361.0,105.0,466.0,187041
+71,Detroit,Michigan,359.0,11.0,370.0,639111
+72,Mesa,Arizona,359.0,1.8,361.0,504258
+73,Columbia,South Carolina,354.0,7.5,362.0,136632
+74,Atlanta,Georgia,350.0,2.6,353.0,498715
+75,Lubbock,Texas,349.0,3.1,352.0,257141
+76,Philadelphia,Pennsylvania,348.0,21.0,370.0,1603797
+77,Portland,Oregon,346.0,30.0,376.0,652503
+78,Winston-Salem,North Carolina,344.0,3.1,347.0,249545
+79,Brownsville,Texas,341.0,35.0,376.0,186738
+80,Greensboro,North Carolina,336.0,13.0,349.0,299035
+81,Lynchburg,Tennessee,335.0,3.1,338.0,6461
+82,Kansas City,Kansas,323.0,9.3,332.0,156607
+83,Fernley,Nevada,314.0,17.0,332.0,22895
+84,Marana,Arizona,314.0,1.8,315.0,51908
+85,Yuma,Arizona,313.0,0.26,313.0,95548
+86,Little Rock,Arkansas,311.0,7.8,319.0,202591
+87,Port St. Lucie,Florida,309.0,4.1,313.0,204851
+88,Athens,Georgia,301.0,4.7,306.0,127315
+89,Fresno,California,298.0,3.1,301.0,542107
+90,Charleston,South Carolina,297.0,53.0,350.0,150227
+91,Hartsville,Tennessee,296.0,6.0,302.0,11615
+92,Tampa,Florida,295.0,160.0,455.0,384959
+93,Eloy,Arizona,294.0,0.26,294.0,15635
+94,Durham,North Carolina,292.0,2.1,294.0,283506
+95,Jackson,Mississippi,289.0,5.4,295.0,153701
+96,Casa Grande,Arizona,287.0,0.0,287.0,53658
+97,Fort Wayne,Indiana,287.0,0.52,287.0,263886
+98,Orlando,Florida,286.0,21.0,308.0,307573
+99,Salt Lake City,Utah,286.0,1.3,287.0,199723
+100,Surprise,Arizona,286.0,0.52,286.0,143148
+101,Reno,Nevada,282.0,7.3,289.0,264165
+102,Shreveport,Louisiana,279.0,40.0,319.0,187593
+103,Savannah,Georgia,277.0,12.0,289.0,147780
+104,Abilene,Texas,276.0,14.0,290.0,125182
+105,Laredo,Texas,276.0,3.9,280.0,255205
+106,Henderson,Nevada,275.0,1.3,276.0,317610
+107,Palmdale,California,275.0,0.52,275.0,169450
+108,Cape Coral,Florida,275.0,35.0,309.0,194016
+109,Babbitt,Minnesota,275.0,2.1,277.0,1397
+110,Rio Rancho,New Mexico,268.0,0.78,268.0,104046
+111,Amarillo,Texas,265.0,4.1,269.0,200393
+112,Unalaska,Alaska,265.0,282.0,546.0,4254
+113,North Las Vegas,Nevada,262.0,0.0,262.0,262527
+114,Tallahassee,Florida,261.0,7.3,269.0,196169
+115,Clarksville,Tennessee,257.0,1.8,259.0,166722
+116,North Port,Florida,257.0,12.0,270.0,74793
+117,St. Marys,Pennsylvania,257.0,0.52,258.0,12738
+118,Nightmute,Alaska,256.0,14.0,270.0,306
+119,Knoxville,Tennessee,256.0,14.0,270.0,190740
+120,Sacramento,California,255.0,5.4,261.0,524943
+121,Lincoln,Nebraska,253.0,3.6,256.0,291082
+122,Denton,Texas,250.0,3.9,254.0,139869
+123,Milwaukee,Wisconsin,249.0,1.6,251.0,577222
+124,Arlington,Texas,248.0,9.3,258.0,394266
+125,Palm Coast,Florida,247.0,3.1,250.0,89258
+126,Palm Springs,California,245.0,0.26,245.0,44575
+127,Lancaster,California,244.0,0.78,245.0,173516
+128,Dothan,Alabama,233.0,0.78,234.0,71072
+129,Waco,Texas,230.0,32.0,262.0,138486
+130,Des Moines,Iowa,228.0,6.5,235.0,214133
+131,Palm Bay,Florida,224.0,8.3,232.0,119760
+132,Baton Rouge,Louisiana,224.0,5.7,229.0,227470
+133,Oak Ridge,Tennessee,221.0,12.0,233.0,31402
+134,South Fulton,Georgia,221.0,2.6,224.0,107436
+135,Edmond,Oklahoma,219.0,8.0,227.0,94428
+136,Boise,Idaho,218.0,2.6,220.0,235684
+137,Seattle,Washington,217.0,151.0,368.0,737015
+138,Beaumont,Texas,214.0,7.3,221.0,115282
+139,Springfield,Missouri,213.0,1.6,215.0,169176
+140,Lawton,Oklahoma,211.0,0.0,211.0,90381
+141,Riverside,California,210.0,0.78,211.0,314998
+142,Baltimore ,Maryland,210.0,29.0,238.0,585708
+143,Toledo,Ohio,208.0,8.5,217.0,270871
+144,Jonesboro,Arkansas,208.0,1.6,209.0,78576
+145,El Reno,Oklahoma,206.0,1.6,208.0,16989
+146,Madison,Wisconsin,206.0,55.0,262.0,269840
+147,Caribou,Maine,205.0,2.1,207.0,7396
+148,Ellsworth,Maine,205.0,38.0,243.0,8399
+149,Sioux Falls,South Dakota,205.0,1.3,206.0,192517
+150,St. George,Utah,203.0,0.0,203.0,95342
