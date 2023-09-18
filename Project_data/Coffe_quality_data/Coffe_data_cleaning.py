@@ -1,4 +1,5 @@
-import numpy as np
+# Данный код сделан для поверхностной очистки данных для представления в Tableu
+
 import pandas as pd
 from sklearn.impute import SimpleImputer
 
