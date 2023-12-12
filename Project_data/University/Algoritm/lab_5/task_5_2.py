@@ -38,10 +38,9 @@ while x <= x_finish:
 #include <math.h>
 
 int main() {
-    float x_start, x_finish, x_step;
+    float x_start, x_finish, x_step, x, y;
     int n, i;
-    float x, y;
-
+    
     printf("Введите начальное значение x: ");
     scanf("%f", &x_start);
     printf("Введите конечное значение x: ");
