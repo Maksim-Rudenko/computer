@@ -68,11 +68,11 @@ x1 = np.array([15, 15, 25, 25, 15])
 y1 = np.array([12, 18, 18, 12, 12])'''
 
 # Значения на сколько смещаем рисунок по осям
-plus_x = 20
-plus_y = 15
+plus_x = 30
+plus_y = 10
 
 # Масщтабирование по осям
-x_size = 3
+x_size = 1
 y_size = 1
 
 # Второй рисунок с смещением 
@@ -85,8 +85,10 @@ x1 = (np.array([15, 15, 25, 25, 15]) + plus_x) * x_size
 y1 = (np.array([12, 18, 18, 12, 12]) + plus_y) * y_size
 
 # Закрепил значения по осям, чтобы было видно наглядно смещение
-plt.ylim(0, 200)
-plt.xlim(0, 300)
+plt_max = max(max(x), max(y)) * 1.5
+
+plt.ylim(0, plt_max)
+plt.xlim(0, plt_max)
 
 plt.plot(x, y, color='black')
 plt.plot(x1, y1, color='black')
@@ -94,3 +96,8 @@ plt.plot(x1, y1, color='black')
 plt.title("House")
 
 plt.show()
+
+
+r = [pow(x[i]**2 + y[i]**2, 0.5) for i in range(len(x))]
+r1 = [pow(x1[i]**2 + y1[i]**2, 0.5) for i in range(len(x1))]
+
