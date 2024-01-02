@@ -25,10 +25,12 @@ for i in range(mas_len):
         if min_val > mas[i]:
             min_val = mas[i]
             
-
+print(mas)
 print("Результат:\n{}".format(new_mas))
-print("максимальное и минимальное значения массива: {} и {} соответственно".format(max_val, min_val))
-
+if len(new_mas) > 0:
+    print("Максимальное и минимальное значения массива: {} и {} соответственно".format(max_val, min_val))
+else:
+    print("В массиве нет элементов")
 
 
 # В С массив определенного размера и задается этот размер изначально. Поэтому там вместо некоторых
@@ -76,8 +78,12 @@ int main() {
     }
     printf("\n");
     
-    printf("максимальное и минимальное значения массива: %f и %f соответственно\n", max_val, min_val);
-    
+    if (sizeof(new_mas) / sizeof(new_mas[0]) > 0) {
+        printf("Максимальное и минимальное значения массива: %f и %f соответственно\n", max_val, min_val);
+    } else {
+        printf("В массиве нет элементов");
+    }
+
     return 0;
 }
 '''

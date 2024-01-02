@@ -9,6 +9,8 @@ for i in range(mas_len):
 
 A = float(input('Введите число А: '))
 
+print("Исходный массив:\n{}".format(mas))
+
 # Алгоритм быстрой сортировки массива
 def partition(sort_nums, begin, end):
     part = begin
@@ -35,16 +37,15 @@ quick_sort(mas)
 
 result = 1
 quest = 0
-i = 0
+
 
 # Расчет произведения квадратов чисел, меньших А; определение есть ли число А в массиве
-while mas[i] <= A:
+for i in range(len(mas)):
     if mas[i] < A:
         result *= mas[i] ** 2
     elif mas[i] == A:
         quest = 1
-    i += 1
-
+    
 
 print("Отсортированный массив:\n{}".format(mas))
 print("Есть ли заданное число А ({}) в исходном массиве: {}".format(A, quest == 1))
@@ -92,19 +93,22 @@ int main() {
     printf("Введите число А: ");
     scanf("%f", &A);
 
+    printf("Исходдный массив:\n");
+    for (int i = 0; i < mas_len; i++) {
+        printf("%f ", mas[i]);
+    }
+
     quick_sort(mas, 0, mas_len - 1);
 
     int result = 1;
-    int quest = 0;
-    int i = 0;
+    int quest = 0;   
 
-    while (mas[i] <= A) {
+    for (i = 0; i < sizeof(mas) / sizeof(mas[0]); i++) {
         if (mas[i] < A) {
             result *= mas[i] * mas[i];
         } else if (mas[i] == A) {
             quest = 1;
         }
-        i += 1;
     }
 
     printf("Отсортированный массив:\n");

@@ -28,7 +28,10 @@ for i in range(len(mas_2)):
         mas_result.append(mas_2[i])
 
 print("Исходные массивы:\n{}\n{}".format(mas_1, mas_2))
-print("Результат:\n{}".format(mas_result))
+if len(mas_result) > 0:
+    print("Результат:\n{}".format(mas_result))
+else:
+    print("Массив не был сформирован")
 
 
 
@@ -75,11 +78,14 @@ int main() {
         printf("%f ", mas_2[i]);
     }
     printf("\n");
-    printf("Результат:\n");
+    if (sizeof(mas_result) / sizeof(mas_result[0]) > 0) {
+        printf("Результат:\n");
     for (int i = 0; i < result_index; i++) {
         printf("%f ", mas_result[i]);
     }
-    printf("\n");
+    } else {
+        printf("Массив не был сформирован");
+    }
     return 0;
 }
 '''
