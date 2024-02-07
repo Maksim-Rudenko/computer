@@ -1,10 +1,12 @@
-import numpy as np # linear algebra
-import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
-import matplotlib.pyplot as plt
-import seaborn as sns
+'''sentence = 'I like to Have this message have? on my computer'
 
-df = pd.read_csv('Data_fashion.csv')
+tags_list = ['like', 'want', 'have', 'do']
 
-# print(df.head())
+def get_tags(sentence):
+    result = []
+    for word in sentence.split(' '):
+        if word.lower() in tags_list:
+            result.append(word)
 
-print(df.info())
+    return result
+print(get_tags(sentence))'''

@@ -1,0 +1,15 @@
+body {
+    font-family: "Times New Roman", sans-serif;
+    font-size: 16px;
+    color: #333333;
+  }
+  
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
