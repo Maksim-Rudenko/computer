@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Использование операторов цикла for, while, do while</title>
+</head>
+<body>
+    <script>
+        document.write("<center>Использование оператора цикла <b>FOR</b></center>");
+        //Возведение числа x в степень
+        x = parseInt(prompt("Введите число x"));;//заданное число 
+        y = parseInt(prompt("Введите степень y"));;//степень, в которую надо возвести число
+        z = x;//результат
+        for (i = 2; i <= Math.abs(y) ; i++)
+            z = z * x;
+        z = (y > 0) ? z : 1 / z;
+        document.write("Число ", x, " в степени ", y, " равно ", z);
+    
+        document.write("<p><center>Использование оператора цикла <b>WHILE</b></center>");
+        z1 = x;
+        i = 2;
+        while (i <= Math.abs(y)) {
+            z1 = z1 * x;
+            i++;
+        }
+        z1 = (y > 0) ? z1 : 1 / z1;
+        document.write("Число ", x, " в степени ", y, " равно ", z1);
+    
+        document.write("<p><center>Использование оператора цикла <b>DO WHILE</b></center>");
+        z2 = x;
+        i = 2;
+        do {
+            z2 = z2 * x;
+            i++;
+        }
+        while (i <= Math.abs(y));
+        z2 = (y > 0) ? z2 : 1 / z2;
+        document.write("Число ", x, " в степени ", y, " равно ", z2);
+    </script>  
+
+
+</body>
+</html>

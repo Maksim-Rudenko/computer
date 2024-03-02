@@ -1,0 +1,19 @@
+.markers {
+    margin: 0;
+    padding: 0 0 0 20px;
+    list-style: none;
+    background-image: url("../images/star.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 15px;
+}
+
+ul {
+    padding: 0;
+
+}
+
+ol {
+    padding: 15px;
+
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Форма</title>
+        <style>
+            input[type="submit"]:disabled {
+              background-color: grey;
+            }
+        </style>
+        <link rel="stylesheet" href="form_anketa.css">
+    </head>
+
+    <body>
+        <form action="" id="developerForm">
+            <table border="1" cellpadding="5">
+                <caption align="left">
+                    <b> Анкета web-разработчика </b>
+                </caption>
+
+                <tr>
+                    <td><label for="email">E-mail*</label></td>
+                <td><input type="email" id="email" name="email" required></td> 
+                </tr>
+
+                <tr>
+                    <td><label for="password">Пароль*</label></td>
+                    <td><input type="password" id="password" name="password" required></td>
+                </tr>
+
+                <tr>
+                    <td>Пол</td>
+                    <td>
+                        <input type="radio" name="gender" id="g1" val- ue="1">
+                        <label for="g1">Мужчина</label>
+                        <input type="radio" name="gender" id="g2" val- ue="2">
+                        <label for="g2">Женщина</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="birthYear">Год рождения:</label></td>
+                    <td><input type="number" id="birthYear" name="birthYear"></td>
+                </tr>
+
+                <tr>
+                    <td>Знание языков</td>
+                    <td>
+                        <input type="checkbox" name="languadg" val- ue="Inglish">Английский<br>
+                        <input type="checkbox" name="languadg" val- ue="Rushen" checked>Русский<br>
+                        <input type="checkbox" name="languadg" val- ue="Doich">Немецкий<br>
+                        <input type="checkbox" name="languadg" val- ue="Spain">Испанский<br>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"> 
+                        <textarea name="description" cols="40" rows="10">Коротко о себе...	</textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Отправить">
+                        <button type="reset">Сбросить</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <script>
+            document.getElementById('developerForm').addEventListener('submit', function(event) {
+              if (!this.checkValidity()) {
+                event.preventDefault();
+                alert('Пожалуйста, заполните все обязательные поля.');
+              }
+            });
+          </script>
+
+    </body>
+</html>

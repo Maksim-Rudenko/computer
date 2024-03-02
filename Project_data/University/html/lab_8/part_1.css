@@ -1,0 +1,13 @@
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 50px 100px;
+    padding: 50px;
+    border: 10px solid darkblue;
+    background-color: lightblue;
+  }
+  
+  p {
+    margin: 30px 150px 50px;
+    padding: 30px;
+    border: 10px solid darkred;
+    background-color: lightpink;
+  }

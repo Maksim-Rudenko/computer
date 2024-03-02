@@ -1,0 +1,120 @@
+/* Переменные */
+:root {
+    --back: rgb(32, 33, 37);
+    --light-back: rgb(42, 43, 48);
+    --white: rgb(246,249,255);
+}
+
+/* Свойства для всех элементов */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Century Gothic";
+    color: var(--white);
+}
+
+/* (Необязательное): для обозначения границ контейнеров */
+.container {
+    border: 1px solid var(--white);
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+/* (Необязательное): заголовки для контейнеров */
+.title {
+    font-size: 1.5em;
+}
+
+/* Контейнер body */
+body {
+    background: var(--back);
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-areas: 
+        "head head head"
+        "nav content bar"
+        "foo foo foo";
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 19em auto 15em;
+    overflow: hidden;
+
+    /* (Необязательное) */
+    gap: 1em;
+    padding: 1em;
+}
+
+/* Контейнер header */
+.header {
+    grid-area: head;
+    /* Конфигурация Grid для кнопок навигации */
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1em;
+}
+
+/* Кнопки навигации */
+.header a {
+    display: block;
+    width: 10em;
+    height: 3em;
+    border-radius: 1em;
+    background: var(--white);
+    color: var(--back);
+    font-weight: bold;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+/* Контейнер navigation */
+.nav {
+    grid-area: nav;
+
+    /* (Необязательное) */
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+}
+
+/* Контейнер content */
+.content {
+    grid-area: content;
+    overflow-y: auto;
+
+    /* (Необязательное) */
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+}
+
+.content span {
+    font-size: 1.5em;
+}
+
+/* Контейнер side-bar */
+.side-bar {
+    grid-area: bar;
+
+    /* (Необязательное) */
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+}
+
+/* Контейнер footer */
+.footer {
+    grid-area: foo;
+
+    /* (Необязательное) */
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Лабораторная работа 1 Задание 3</title>
+</head>
+
+<body>
+    <script>
+        document.write('<table border="1" cellspacing="0" cellpadding="5">');
+
+        // Функция для проверки, является ли число треугольным
+        function isTriangleNumber(num) {
+            let n = Math.floor(Math.sqrt(2*num));
+            return num == n*(n+1)/2;
+        }
+
+        let count = 1;
+        for (let i = 0; i < 10; i++) {
+            document.write('<tr>');
+            for (let j = 0; j < 10; j++) {
+                // Если число треугольное, выводим его красным цветом
+                if (isTriangleNumber(count)) {
+                    document.write('<td style="color: red;">' + count + '</td>');
+                } else {
+                    document.write('<td>' + count + '</td>');
+                }
+                count++;
+            }
+            document.write('</tr>');
+        }
+
+        document.write('</table>');
+
+    </script>
+      
+</body>
+</html>

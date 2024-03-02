@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Использование оператора IF</title>
+</head>
+<body>
+    <script type="text/javascript">
+        document.write("<center>Использование оператора <b>IF</b></center>");
+        age = 24;
+        if (age < 18) document.write("Вы слишком молоды для просмотра этого сайта");// ничего не выводится
+
+        age = 10;
+        if (age < 18) document.write("Вы слишком молоды для просмотра этого сайта");// выводится сообщение
+        document.write("<center>Использование оператора <b>IF</b> с блоком <b>ELSE</b></center>");
+
+        s = "плохо";
+        if (s == "хорошо") document.write("Я в хорошем настроении!");
+        else document.write("Мне ", s);
+        
+        document.write("<center>Использование оператора <b>IF</b> с блоками <b>ELSE</b> и <b>ELSEIF</b> </center>");
+        if (s == "хорошо") { document.write("Я в хорошем настроении!"); }
+        else if (s == "плохо") { document.write("He отчаивайтесь!"); }
+        else { document.write("Непонятно, просто", s); }
+    </script>
+</body>
+</html>

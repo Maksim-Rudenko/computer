@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Использование вложенного оператора FOR</title>
+</head>
+<body>
+    <script>
+        document.write("Все координаты х,у (0,0) и (9,9) :<br>");
+        for (var x = 0; x < 10; ++x) {
+            for (var y = 0; y < 10; ++y) {
+                document.write("(" + x + "," + y + "),");
+            }
+            document.write('<br>');
+        }
+        document.write("<br>После завершения цикла х равно :" + x);
+        document.write("<br>После завершения цикла у равно :" + y);
+    </script>
+    
+
+
+</body>
+</html>

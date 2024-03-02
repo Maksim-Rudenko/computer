@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Первая программа на JavaScript</title>
+    <script>
+        var n = parseInt(prompt("Введите кол-во углов n", ""))
+        var r = parseInt(prompt("Введите радиус r", ""))
+        a = 2 * r * (Math.tan((Math.PI) / n))
+        p = a * n
+        s = (1 / 2) * n * a * r
+        alert("Площадь = " + s)
+        alert("Периметр = " + p)
+    </script>
+</head>
+<body>
+</body>
+</html>

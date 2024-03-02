@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Лабораторная работа 1 Задание 1</title>
+</head>
+
+<body>
+    <script>
+        // Вводим общую сумму покупки
+        var totalCost = Number(prompt("Введите общую сумму покупки"));
+
+        // Вводим скидку в процентах от 1 до 5
+        var discountPercent = Number(prompt("Введите скидку от 1 до 5 %"));
+
+        // Проверяем, что скидка в заданных пределах
+        if (discountPercent < 1 || discountPercent > 5) {
+            alert("Скидка должна быть от 1 до 5 %");
+        } 
+        else {
+            // Вычисляем скидку в рублях
+            var discountRub = totalCost * discountPercent / 100;
+    
+            // Вычисляем стоимость покупки со скидкой
+            var costWithDiscount = totalCost - discountRub;
+    
+            // Отображаем результаты
+            document.write("Общая стоимость покупки: " + totalCost + " руб.<br>");
+            document.write("Скидка: " + discountRub + " руб.<br>");
+            document.write("Стоимость покупки со скидкой: " + costWithDiscount + " руб.<br>");
+        }
+    </script>
+      
+</body>
+</html>

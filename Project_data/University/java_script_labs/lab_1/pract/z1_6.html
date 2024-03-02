@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Использование оператора IF и условной операции</title>
+</head>
+<body>
+    <script>
+        //Пример нахождения большего среди трех чисел
+        document.write("<center>Пример определения большего числа</center>");
+        a = 1; b = 22; c = 3;
+
+        if (a > b && a > c) document.write("Наибольшее среди трех чисел - a=", a, "<br>");
+        else if (b > c) document.write("Наибольшее среди трех чисел - b=", b, "<br>");
+        else document.write("Наибольшее среди трех чисел - c=", c, "<br>");
+
+        //Использование условной операции
+        Max = (a > b) ? a : b;
+        Max = (Max > c) ? Max : c;
+        document.write("Значение наибольшее среди трех чисел - ", Max, "<br>");
+    </script>
+</body>
+</html>

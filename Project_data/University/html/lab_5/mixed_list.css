@@ -1,0 +1,8 @@
+ul {
+    list-style: none;
+}
+ul li.defis:before {
+    content:  "—";
+    position: relative;
+    left:     -5px;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Использование оператора цикла while в игре с пользователем</title>
+</head>
+
+<body>
+    <script>
+        var num = Math.random() * 100;//генерация случайного числа
+        num = Math.floor(num);//отбрасывание дробной части
+        num = 4;
+        var f = true;
+        var n;
+        var count = 0;
+        document
+        t = confirm("Сыграем?");
+        if (t) {
+            while (f) {
+                n = parseInt(prompt("введите число"));
+                count++;
+                if (n == num) {
+                    alert("Вы угадали\n количество попыток: " + count);
+                    f = false;
+                }
+                else if (n < num) {
+                    alert("Число меньше, попробуйте еще раз");
+                }
+                else {
+                    alert("Число больше, попробуйте еще раз")
+                }
+            }
+        }
+        else alert("Жаль.\nМожет быть в другой раз?");
+    </script>
+      
+</body>
+</html>
