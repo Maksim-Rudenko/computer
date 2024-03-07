@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Руденко Максим - Лабораторная работа 4 Задание 3</title>
+</head>
+<body>
+    <script>
+        // Получаем строку от пользователя
+        let inputString = prompt("Введите строку:");
+
+        // Создаем массивы с буквами алфавита
+        let alphabet = ['а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я', 'а'];
+
+        // Заменяем каждую букву на следующую за ней в алфавите
+        let resultString = "";
+        for (let i = 0; i < inputString.length; i++) {
+            let char = inputString[i];
+            let index = alphabet.indexOf(char);
+            if (index !== -1) {
+                resultString += alphabet[index + 1];
+            } else {
+                resultString += char;
+            }
+        }
+                
+        document.write("<p>Строка после замены: " + resultString + "</p>");
+    </script>
+</body>
+</html>

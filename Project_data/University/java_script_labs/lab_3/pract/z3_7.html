@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Динамическое создание HTML-документа</title>
+    <script language="JavaScript">
+        function openWin4() {
+            var inf = "";
+            myWin = open("", "displayWindow", "width=400,height=200,status=no,toolbar=no,menubar=no")
+
+            myWin.document.open() // открыть объект document для последующей печати
+
+            // генерировать новый документ
+            myWin.document.write("<html><head><title>Динамическое создание HTML-документа</title>")
+            myWin.document.write("<META HTTP-EQUIV='Content-Type' CONTENT='text/html;")
+            myWin.document.write("charset=windows-1251'></head><body>")
+            inf = inf + "<ul><li><b>Имя:</b> " + document.myform.yourname.value;
+            inf = inf + "<p><li><b>Адрес:</b> " + document.myform.youraddr.value;
+            inf = inf + "<p><li><b>Телефон:</b> " + document.myform.yourphone.value + "</ul>";
+            myWin.document.write(inf);
+            myWin.document.write("</body></html>")
+
+            myWin.document.close() // закрыть документ на запись(но не само окно!)
+        }
+    </script>
+
+</head>
+<body>
+    <form name="myform">
+        <p><strong>Имя:</strong> <input type=text maxlength=20 name="yourname"></p>
+        <p><strong>Адрес:</strong> <input type=text maxlength=20 name="youraddr"></p>
+        <p><strong>Телефон:</strong> <input type=text maxlength=20 name="yourphone"></p>
+        
+        <input type=button value="Динамическое создание HTML-документа" onclick="openWin4()">
+    </form>
+
+    
+</body>
+</html>

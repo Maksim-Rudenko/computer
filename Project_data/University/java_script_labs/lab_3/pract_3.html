@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Руденко Максим - Лабораторная работа 3 Задание 3</title>
+    
+    <style>
+        .box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+        }
+        #box1 {
+            background-color: red;
+            z-index: 1;
+            top: 0;
+            left: 0;
+        }
+        #box2 {
+            background-color: green;
+            z-index: 2;
+            top: 50px;
+            left: 50px;
+        }
+        #box3 {
+            background-color: blue;
+            z-index: 3;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <!--Наверное еще нужно сделать так, чтобы изменялись цвета, но что-то не изменяются-->
+
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+    <div class="box" id="box3"></div>
+
+    <button style="margin-left: 120px;" onclick="changeZIndexAndColor()">Сменить z-index и цвет</button>
+
+    <script>
+        var boxes = [document.getElementById('box1'), document.getElementById('box2'), document.getElementById('box3')];
+        var colors = ['red', 'green', 'blue'];
+
+        function changeZIndexAndColor() {
+            var firstZIndex = boxes[0].style.zIndex;
+            var firstColor = boxes[0].style.backgroundColor;
+        
+            for (var i = 0; i < boxes.length - 1; i++) {
+                boxes[i].style.zIndex = boxes[i + 1].style.zIndex;
+                boxes[i].style.backgroundColor = boxes[i + 1].style.backgroundColor;
+            }
+        
+            boxes[boxes.length - 1].style.zIndex = firstZIndex;
+            boxes[boxes.length - 1].style.backgroundColor = firstColor;
+        }
+
+    </script>
+
+</body>
+</html>

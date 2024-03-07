@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Передача функции в качестве аргумента другой функции</title>
+</head>
+
+<body>
+    <script>
+        function kvadrat(a)
+        { return a * a; }
+        
+        // тут k выходит в виде функции, а не просто переменная. Поэтому в вызове ниже
+        // не нужно к вызове ф-ции kvadrat давать аргумент
+        function polinom(a, k)
+        { return k(a) + a + 5; }
+    
+        result=polinom(3, kvadrat);
+        document.write("<h1>result=", result);
+    </script>     
+                  
+</body>
+</html>

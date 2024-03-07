@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Использование встроенных функций объекта Date</title>
+</head>
+
+<body>
+    <script>
+        var today = new Date();
+        var newYearDay = new Date(today.getFullYear() + 1, 0, 1);
+        var day = 86400000;
+        var hour = 3600000;
+        var minute = 60000;
+        
+        var time = newYearDay.getTime() - today.getTime();
+        var days = Math.floor(time / day);
+        var hours = Math.floor((time - days * day) / hour);
+        var minutes = Math.floor((time - days * day - hours * hour) / minute);
+        var str = days + ' дней, ' + hours + ' часов, ' + minutes + ' минут.';
+        document.write('До Нового года осталось ', str);
+    </script>
+     
+      
+</body>
+</html>

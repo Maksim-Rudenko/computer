@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Использование методов объекта String</title>
+</head>
+<body>
+    <script>
+        document.write("<p style=\"text-align:center;font-weight:bold;\">Работа со строками</p>");
+        function header(text) {
+            text = text.toUpperCase()
+            var words = text.split(' ')
+            document.write('<H1 style="color:red;text-align:center;">')
+            for (var i = 0; i < words.length; i++) {
+                document.write(words[i], '<BR>')
+            }
+            document.write('</H1>')
+        }
+        var slogan = 'Ну, заяц, погоди!'
+        var ind = slogan.indexOf('заяц')
+        if (ind != -1) {
+            slogan = slogan.slice(0, ind) + 'волк' +
+              slogan.slice(ind + 4)
+        }
+        header(slogan)
+     </script>
+     
+</body>
+</html>

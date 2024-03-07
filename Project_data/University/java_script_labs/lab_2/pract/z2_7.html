@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Использование функции как объекта</title>
+</head>
+
+<body>
+    <script>
+        function mean(a, b) {
+            if (arguments.length > mean.length) {
+                alert('Аргументов больше, чем надо')
+            }
+            var result = 0
+            for (var i = 0; i < arguments.length; i++) {
+                result += arguments[i]
+            }
+            return result / arguments.length
+        }
+        document.write('Среднее - ', mean(2, 3))
+        document.write('<BR>')
+            // выведет сообщение, что аргументов больше, но все равно посчитает среднее и выведет
+        document.write('Среднее - ', mean(2, 4, 6))
+    </script>         
+                  
+</body>
+</html>

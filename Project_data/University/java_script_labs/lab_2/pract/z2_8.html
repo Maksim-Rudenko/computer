@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Работа с массивами</title>
+</head>
+
+<body>
+    <script>
+        document.write("<center><b>Создание массива с помощью new Array()</b></center>");
+        colors = new  Array("red", "green", "blue", "gray");
+        document.write("<br>", colors);
+        
+        document.write("<p><center><b>Инициализация элементов пустого массива с помощью идентификатора</b></center>");
+        colors1 = new Array();
+        colors1[0] = "red";
+        colors1[1]= "green";
+        colors1[2]= "blue";
+        colors1[3]= "gray";
+        document.write("<br>", colors1);
+    
+        document.write("<center><b>Создание двумерного массива</b></center>");
+        matrix=new  Array([1,2,3], [4,5,6], [7,8,9]);
+        document.write("<br>", matrix);
+        
+        document.write("<center><b>Обращение к элементам массива</b></center>");
+        document.write("<br>Второй элемент массива color - ", colors[1]); //индексация начинается с нуля
+        document.write("<br>Третий элемент второй строки двумерного массива matrix - ", matrix[2][1]);
+    </script>
+           
+                  
+</body>
+</html>

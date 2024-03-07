@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Вывод текстовой информации</title>
+</head>
+<body>
+    <script>
+        document.write("<p style=\"text-align:center;font-weight:bold;\">Работа со строками</p>");
+        var str = prompt("Введите строку для обработки");
+        var srez = "Введенный текст:<br>" + str + "<br>Текст в 'столбик':<br>";
+        var cur = "";
+        for (i = 0; i<str.length; i++) {
+            c = str.charAt(i);
+            cur += c + "<br>";
+        }
+        srez += cur;
+        document.write(srez);
+     </script>        
+     
+</body>
+</html>

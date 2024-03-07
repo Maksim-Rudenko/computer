@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Способы вывода элементов массива</title>
+</head>
+
+<body>
+    <script>
+        //Создание одномерного массива из 10 элементов, значения которых находятся в диапазоне от 1 до 100
+        document.write("<p style=\"text-align:center;font-weight:bold;\">Создание массива</p>");
+        n = 10;
+        mas = new Array();
+        for (i = 0; i < n; i++) {
+            mas[i] = Math.floor(Math.random() * 100);
+        };
+
+        //Вывод одномерного массива 
+        document.write("<p style=\"text-align:center;font-weight:bold;\">Вывод массива с использованием оператора цикла FOR</p>");
+        for (i = 0; i < n; i++) {
+            document.write("mas[", i, "] =", mas[i], "&nbsp;&nbsp;&nbsp;&nbsp;");
+        };
+
+        document.write("<p style=\"text-align:center;font-weight:bold;\">Вывод массива с использованием оператора цикла FOR IN</p>");
+        for (elem in mas) {
+            document.write(mas[elem], "&nbsp;&nbsp;&nbsp;&nbsp;");
+        };
+        
+        document.write("<p style=\"text-align:center;font-weight:bold;\">Вывод массива с использованием неявного вызова метода toString</p>");
+        document.write(mas);
+    </script>           
+                  
+</body>
+</html>

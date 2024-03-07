@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Повторение с помощью функции setTimeout</title>
+    <script language="JavaScript">
+        var k = 1
+        function ref() { k = 6 }
+        function succpict() {
+          var d = document
+          if (k <= 5) {
+            if (k == 1) { d.mypict.src = "../images/black_sqrt.jpg"; k++ }
+            else if (k == 2) { d.mypict.src = "../images/blue_sqrt.png"; k++ }
+            else if (k == 3) { d.mypict.src = "../images/green_sqrt.jpg"; k++ }
+            else if (k == 4) { d.mypict.src = "../images/red_sqrt.jpg"; k++ }
+            else if (k == 5) { d.mypict.src = "../images/yellow_sqrt.png"; k = 1 }
+            setTimeout("succpict()", 1000)
+          }
+        }
+    </script>
+</head>
+<body onload="succpict()">
+    <p>Просмотр рисунков</p>
+    <img src="../images/black_sqrt.jpg" name="mypict" width=200>
+    <form>
+        <input type="reset" value="Ocтановить" onclick=ref()>
+        <input type="button" value="Haчать снова" onclick="k=1; succpict()">
+    </form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Руденко Максим - Лабораторная работа 3 Задание 1</title>
+</head>
+<body>
+    <script language="javascript">
+        // Создаем форму
+        var form = document.createElement("form");
+
+        // Добавляем кнопку для добавления полей
+        var addButton = document.createElement("button");
+        addButton.textContent = "Добавить поле";
+        addButton.type = "button";
+        addButton.onclick = function() {
+            var input = document.createElement("input");
+            input.type = "text";
+            form.insertBefore(input, addButton);
+        }
+        form.appendChild(addButton);
+
+        // Добавляем форму на страницу
+        document.body.appendChild(form);
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Руденко Максим - Лабораторная работа 2 Задание 1</title>
+</head>
+
+<body>
+    <script>
+        function WeekDay(size, day, color) {
+            var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            document.write("<p style='font-size:" + size + "px; color:" + color + "'>" + days[day] + "</p>");
+        }
+
+        var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+        var size = 14; // для параграфа размер 7 слишком мал (вообще лечше 25+)
+
+        for (var i = 0; i < 7; i++) {
+            WeekDay(size, i, colors[i]);
+            size--;
+        }
+    </script>
+              
+                  
+</body>
+</html>

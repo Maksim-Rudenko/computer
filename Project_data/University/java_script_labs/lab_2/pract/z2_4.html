@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Использование функции с необязательным параметром</title>
+</head>
+
+<body>
+    <script>
+        function FontSize(txt, size) {
+            //если параметр size не передан - присвоить ему значение 14 
+            if (size === undefined) 
+                size = 14;
+            document.write("<div style=\"font-size:", size, "pt\">", txt, "</div>");
+        } 
+        FontSize ("<p>Крупный шрифт", 32); 
+        FontSize ("<p>Шрифт по умолчанию - первая строка");
+        FontSize ("<p>Шрифт по умолчанию - вторая строка");
+        FontSize ("<p>Мелкий шрифт", 8); 
+    </script>   
+        
+           
+</body>
+</html>

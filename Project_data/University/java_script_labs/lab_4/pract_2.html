@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Руденко Максим - Лабораторная работа 4 Задание 2</title>
+</head>
+<body>
+    <script>
+        // Получаем строку от пользователя
+        let inputString = prompt("Введите строку:");
+
+        // После каждого слова ставим запятую
+        let string_with_commas = inputString.split(' ').join(', ');
+
+        document.write("<p>Строка после добавления запятых: " + string_with_commas + "</p>");
+
+        // Подсчитываем количество слов, в которых есть буква 'п'
+        let words = inputString.split(" ");
+        let count = 0;
+
+        for (let word of words) {
+            if (word.includes('п')) {
+                count++;
+            }
+        }
+        
+        document.write("<p>Количество слов, в которых есть буква 'п': " + count + "</p>");
+    </script>
+</body>
+</html>

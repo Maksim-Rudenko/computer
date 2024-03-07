@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Руденко Максим - Лабораторная работа 2 Задание 5</title>
+</head>
+
+<body>
+    <script>
+        // Создаем массивы
+        var fruits = ['apple', 'pineapple', 'mango', 'melon', 'grape'];
+        var citrus = ['orange', 'lemon', 'lime'];
+
+        // Выводим массивы
+        document.write("<p>Исходные массивы:</p>");
+        document.write(fruits.join(", ") + "<br>");
+        document.write(citrus.join(", ") + "<br>");
+
+        // Объединяем массивы
+        document.write("<p>Объединенные массивы:</p>");
+        fruits = fruits.concat(citrus);
+        document.write(fruits.join(", ") + "<br>");
+
+        // Вставляем новые элементы после 'mango'
+        document.write("<p>Вставляем новые элементы после 'mango':</p>");
+        var index = fruits.indexOf('mango') + 1;
+        fruits.splice(index, 0, 'pear', 'cherry', 'plum', 'raspberry', 'strawberry');
+        document.write(fruits.join(", ") + "<br>");
+
+        // Удаляем последние 3 элемента
+        document.write("<p>Удаляем последние 3 элемента массива fruits:</p>");
+        fruits.splice(-3, 3);
+        document.write(fruits.join(", ") + "<br>");
+
+        // Сортируем массив в алфавитном порядке
+        document.write("<p>Сортируем массив fruits в алфавитном порядке:</p>")
+        fruits.sort();
+        document.write(fruits.join(", ") + "<br>");
+
+        // Сортируем массив в обратном алфавитном порядке
+        document.write("<p>Сортируем массив fruits в обратном алфавитном порядке:</p>")
+        fruits.reverse();
+        document.write(fruits.join(", ") + "<br>");
+
+        // Сортируем массив по длине слов
+        document.write("<p>Сортируем массив fruits по длине слов:</p>")
+        fruits.sort(function(a, b) { return a.length - b.length; });
+        document.write(fruits.join(", ") + "<br>");
+        
+    </script>
+      
+</body>
+</html>

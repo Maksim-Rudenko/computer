@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Руденко Максим - Лабораторная работа 4 Задание 1</title>
+</head>
+<body>
+    <script>
+        // Получаем строку от пользователя
+        let inputString = prompt("Введите строку:");
+
+        // Подсчёт общего количества символов '+ ' и '-'
+        let plusCount = (inputString.match(/\+/g) || []).length;
+        let minusCount = (inputString.match(/\-/g) || []).length;
+        let totalSymbols = plusCount + minusCount;        
+        document.write("<p>Общее количество символов '+ ' и '-': " + totalSymbols + "</p>");
+
+        // Замена каждого символа ';' на ',' и '.'
+        let resultString = inputString.replace(/;/g, ',.');       
+        document.write("<p>Строка после замены: " + resultString + "</p>");
+    </script>
+</body>
+</html>

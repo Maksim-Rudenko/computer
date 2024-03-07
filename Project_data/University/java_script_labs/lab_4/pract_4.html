@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Руденко Максим - Лабораторная работа 4 Задание 4</title>
+</head>
+<body>
+    <script>
+        // Получаем строку от пользователя
+        let inputString = prompt("Введите строку:");
+
+        // Функция для перемешивания букв в слове
+        function shuffleWord(word) {
+            if (word.length <= 3) {
+                return word;
+            }
+    
+            let middle = word.slice(1, -1).split('');
+            middle.sort(() => Math.random() - 0.5);
+    
+            return word[0] + middle.join('') + word[word.length - 1];
+        }
+
+        // Разбиваем строку на слова и перемешиваем буквы в каждом слове
+        let words = inputString.split(" ");
+        let resultWords = words.map(shuffleWord);
+
+        // Объединяем перемешанные слова обратно в строку
+        let resultString = resultWords.join(" ");
+
+        document.write("<p>Строка после перемешивания букв: " + resultString + "</p>");
+    </script>
+</body>
+</html>

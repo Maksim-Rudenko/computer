@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>использование функции как переменной</title>
+</head>
+
+<body>
+    <script>
+        var i = 5;
+        //var a = 8;
+        //var b = 4;
+        //var c = 6;
+        function f(a, b, c) {
+            if (a > b) return c;
+        }
+        document.write('Значение переменной i: ' + i.valueOf());
+        document.write('<p>Значение переменной f:<br>' + f.valueOf());
+    </script>   
+                  
+</body>
+</html>

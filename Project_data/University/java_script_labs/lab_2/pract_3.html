@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Руденко Максим - Лабораторная работа 2 Задание 3</title>
+</head>
+
+<body>
+    <script>
+        // Создаем массив "треугольных" чисел
+        var treug = [];
+        for (var i = 1; i <= 10; i++) {
+            treug.push(i * (i + 1) / 2);
+        }
+        document.write(treug.join("  ") + "<br>");
+
+        // Создаем массив квадратов натуральных чисел
+        var kvd = [];
+        for (var i = 1; i <= 10; i++) {
+            kvd.push(i * i);
+        }
+        document.write(kvd.join("  ") + "<br>");
+
+        // Объединяем два массива
+        var rez = treug.concat(kvd);
+        document.write(rez.join("  ") + "<br>");
+
+        // Сортируем массив в обратном порядке
+        rez.sort(function(a, b) { return b - a; });
+        document.write(rez.join("  ") + "<br>");
+    </script>
+      
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Относительное позиционирование</title>
+    <style type="text/css">
+        DIV.a {
+            background-color: yellow;
+            border-width: 8px;
+            border-style: outset;
+            margin: 5pt;
+            padding: 3pt;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        DIV.b {
+            background-color: yellow;
+            border-width: 10px;
+            border-style: groove;
+            margin: 5pt;
+            padding: 5pt;
+        }
+    </style>
+
+    <script language="javascript" type="text/javascript">
+        function my_click1() {
+            var st = document.styleSheets[0]
+            var rule = (st.rules) ? st.rules[0] : st.cssRules[0]
+            if (rule.style.borderStyle == 'outset')
+            { rule.style.borderStyle = 'inset' }
+            else { rule.style.borderStyle = 'outset' }
+        }
+        function my_click2() {
+            var st = document.styleSheets[0]
+            var rule = (st.rules) ? st.rules[0] : st.cssRules[0]
+            if (rule.style.padding == '3pt')
+            { rule.style.padding = '8pt' }
+            else { rule.style.padding = '3pt' }
+        }
+        function my_click3() {
+            var st = document.styleSheets[0]
+            var rule = (st.rules) ? st.rules[1] : st.cssRules[1]
+            if (rule.style.borderStyle == 'groove')
+            { rule.style.borderStyle = 'ridge' }
+            else { rule.style.borderStyle = 'groove' }
+        }
+    </script>
+</head>
+<body>
+    <div class="a">
+        Внешний блок
+        <div class="b">Внутренний блок</div>
+        &nbsp
+    </div>
+    <div onclick="my_click1()">1. Рамка внешнего блока</div>
+    <div onclick="my_click2()">2. Отступы внешнего блока</div>
+    <div onclick="my_click3()">3. Рамка внутреннего блока</div>
+</body>
+</html>
+</html>

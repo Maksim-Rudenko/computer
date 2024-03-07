@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Использование встроенных функций объекта Date</title>
+</head>
+
+<body>
+    <script>
+        var today = new Date()
+        var hours = today.getHours()
+        var minute = today.getMinutes()
+
+        if (minute < 10) minute = '0' + minute
+
+        if (hours < 12) { var time12 = hours + ':' + minute + ' am' }
+        else { var time12 = hours - 12 + ':' + minute + ' pm' }
+        
+        document.write('текущее время - ', time12)
+    </script>   
+      
+</body>
+</html>

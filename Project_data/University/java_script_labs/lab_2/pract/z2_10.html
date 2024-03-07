@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Способы использования стандартных методов обработки массивов</title>
+</head>
+
+<body>
+    <script>
+        document.write("<p style=\"text-align:center;font-weight:bold;\">Операция сложения массива</p>");
+        a = new Array("Информатика", "Математика");
+        b = new Array("История", "Биология", "Физика");
+        c = a.concat(b);
+        document.write(c, "<br>");
+
+        //Вытолкнем последний элемент и отобразим его
+        document.write("<p style=\"text-align:center;font-weight:bold;\">Метод pop - удаление последнего элемента</p>");
+        document.write(c.pop() + "<br>");
+
+        document.write("<p style=\"text-align:center;font-weight:bold;\">Массив после изменения</p>");
+        document.write(c, "<br>");
+
+        //Изменим порядок следования
+        document.write("<p style=\"text-align:center;font-weight:bold;\">Массив после изменения порядка следования на противоположный</p>");
+        c.reverse();
+        document.write(c, "<br>");
+
+        //Произведем выделение разных частей массива
+        document.write("<p style=\"text-align:center;font-weight:bold;\">Выделение разных частей массива</p>");
+        document.write(c.slice(0, 2) + "<br>");
+        document.write(c.slice(1) + "<br>");
+        
+        //Отсортируем массив
+        document.write("<p style=\"text-align:center;font-weight:bold;\">Массив после сортировки</p>");
+        c.sort();
+        document.write(c, "<br>");
+    </script>
+              
+                  
+</body>
+</html>

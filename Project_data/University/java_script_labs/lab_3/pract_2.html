@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Руденко Максим - Лабораторная работа 3 Задание 2</title>
+</head>
+<body>
+
+    <button onclick="changeBackground()">Сменить фон</button>
+
+    <script>
+    var images = ['images/city_2.jpeg', 'images/park.jpg', 'images/sea.jpg'];
+    var currentImage = 0;
+    
+    function changeBackground() {
+        document.body.style.backgroundImage = 'url(' + images[currentImage] + ')';
+        currentImage = (currentImage + 1) % images.length;
+    }
+    </script>
+
+</body>
+</html>

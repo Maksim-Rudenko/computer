@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Идентификация браузера Yandex</title>
+    <script>
+        function screen_properties() {
+            s = screen.width + " x " + screen.height + " pixels, " + screen.pixelDepth + " bit depth, " + screen.colorDepth + " bit color palette depth.";
+            alert(s);
+        } // end function screen_properties
+    </script>
+</head>
+<body>
+    <form name=f>
+        <input type=button value='go' onclick="screen_properties() ">
+    </form>
+</body>
+</html>

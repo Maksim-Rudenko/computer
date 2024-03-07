@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" >
+    <title>Отображение в браузере русских названий для дней недели и месяцев</title>
+</head>
+<body>
+    <script>
+        document.write("<p style=\"text-align:center;font-weight:bold;\">Вывод даты по-русски</p>");
+       function dateString(date) {
+           var days = new Array('воскресенье', 'понедельник',
+             'вторник', 'среда', 'четверг', 'пятница', 'суббота')
+           var months = new Array('января', 'февраля', 'марта',
+           'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября',
+           'октября', 'ноября', 'декабря')
+           var str = days[date.getDay()] + ', '
+           str += date.getDate() + ' ' + months[date.getMonth()] + ' '
+           str += date.getFullYear() + ' года.'
+           return str
+       }
+       var today = new Date()
+       document.write('Сегодня ', dateString(today))
+    </script>
+
+</body>
+</html>
