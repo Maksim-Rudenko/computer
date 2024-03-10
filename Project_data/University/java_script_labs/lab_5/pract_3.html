@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Тестирование</title>
+    <style>
+        .correct-answer {
+            background-color: lightgreen;
+        }
+        .incorrect-answer {
+            background-color: lightcoral;
+        }
+    </style>
+    <script>
+        let questions = [
+            { num_question: '1', question: 'Вопрос 1', correctAnswer: 'A', answers: ['A', 'B', 'C', 'D'] },
+            { num_question: '2', question: 'Вопрос 2', correctAnswer: 'B', answers: ['A', 'B', 'C', 'D'] },
+            { num_question: '3', question: 'Вопрос 3', correctAnswer: 'C', answers: ['A', 'B', 'C', 'D'] },
+            // Добавьте остальные вопросы здесь
+        ];
+
+        function startTest() {
+            if (!confirm('Хотите пройти тест?')) {
+                return;
+            }
+
+            let name = prompt('Введите ваше ФИО:');
+            let age = prompt('Введите ваш возраст:');
+            let gender = prompt('Введите ваш пол:');
+
+            let results = [];
+            let totalTime = 0;
+
+            for (let i = 0; i < questions.length; i++) {
+                let question = questions[i];
+                let startTime = new Date();
+                let answer = prompt(question.question + '\n' + question.answers.join('\n'));
+                let endTime = new Date();
+                let timeSpent = (endTime - startTime) / 1000; // in seconds
+                totalTime += timeSpent;
+                let correct = answer.toUpperCase() === question.correctAnswer;
+                results.push({ num_question: question.num_question, question: question.question, correctAnswer: question.correctAnswer, userAnswer: answer, correct: correct, time: timeSpent.toFixed(2) });
+            }
+
+            let correctAnswers = results.filter(result => result.correct);
+            let incorrectAnswers = results.filter(result => !result.correct);
+            let longestTime = Math.max(...results.map(result => parseFloat(result.time)));
+            let averageTime = totalTime / questions.length;
+            let correctPercentage = (correctAnswers.length / questions.length) * 100;
+            let incorrectPercentage = (incorrectAnswers.length / questions.length) * 100;
+            let thresholdTime = 10; // пороговое время
+            let longerThanThreshold = results.filter(result => parseFloat(result.time) > thresholdTime);
+
+            document.body.innerHTML = '<h1>Результаты теста</h1>' +
+                '<p>ФИО: ' + name + '</p>' +
+                '<p>Возраст: ' + age + '</p>' +
+                '<p>Пол: ' + gender + '</p>' +
+                '<table>' +
+                '<tr><th>Номер вопроса</th><th>Вопрос</th><th>Правильный ответ</th><th>Ответ пользователя</th><th>Время ответа</th></tr>' +
+                results.map(function (result, index) {
+                    return '<tr class="' + (result.correct ? 'correct-answer' : 'incorrect-answer') + '">' +
+                        '<td>' + (index + 1) + '</td>' +                        
+                        '<td>' + result.question + '</td>' +
+                        '<td>' + result.correctAnswer + '</td>' +
+                        '<td>' + result.userAnswer + '</td>' +
+                        '<td>' + result.time + ' сек</td>' +
+                        '</tr>';
+                }).join('') +
+                '</table>' +
+                '<p>Список вопросов с правильным ответом: ' + correctAnswers.map(answer => answer.num_question).join(', ') + '</p>' +
+                '<p>Список вопросов с неверным ответом: ' + incorrectAnswers.map(answer => answer.num_question).join(', ') + '</p>' +
+                '<p>Вопрос, на который было затрачено более всего времени: ' + results.find(result => parseFloat(result.time) === longestTime).question + '</p>' +
+                '<p>Среднее время ответа на вопрос: ' + averageTime.toFixed(2) + ' сек</p>' +
+                '<p>Процент правильных ответов: ' + correctPercentage.toFixed(2) + '%</p>' +
+                '<p>Процент неправильных ответов: ' + incorrectPercentage.toFixed(2) + '%</p>' +
+                '<p>Вопросы, на которые было затрачено времени более порогового значения: ' + longerThanThreshold.map(answer => answer.num_question).join(', ') + '</p>';
+        }
+    </script>
+</head>
+<body>
+    <button onclick="startTest()">Начать тест</button>
+</body>
+</html>

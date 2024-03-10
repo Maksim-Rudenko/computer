@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <title>Расчет по формуле</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: green;
+        }
+    </style>
+    <script>
+        function calculate() {            
+            let x = Number(document.getElementById('input_x').value);
+            let y = Number(document.getElementById('input_y').value);
+            let z = Number(document.getElementById('input_z').value);
+
+            let b = x + (Math.pow(z * y, 1/3) / (y + Math.cos(x)));
+
+            let resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = "<strong>Результат:</strong> b = " + b;
+        }
+    </script>
+</head>
+<body>
+    <h1>Расчет по формуле:</h1>
+    <img src='images/formula.png' width='160'>
+    <p>Введите значения x, y, z:</p>
+    x = <input type="number" id="input_x"><br>
+    y = <input type="number" id="input_y"><br>
+    z = <input type="number" id="input_z"><br>
+    <button onclick="calculate()">Рассчитать</button>
+    <div id="result" class="result"></div>
+</body>
+</html>

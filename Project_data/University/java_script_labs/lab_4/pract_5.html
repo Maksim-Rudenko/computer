@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <title>Руденко Максим - Лабораторная работа 4 Задание 5</title>
+    <style>
+        .salary-input {
+            display: flex;
+            justify-content: space-between;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+        .salary-input label {
+            width: 50%;
+        }
+        .salary-input input {
+            width: 50%;
+        }
+    </style>
+    <script>
+        function calculateAverage(form) {
+            let total = 0;
+            for (let i = 0; i < form.elements.length - 1; i++) {
+                total += Number(form.elements[i].value);
+            }
+            let average = total / 6;
+            document.getElementById('averageSalary').value = average.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <form name="salaryForm">
+        <div class="salary-input"><label>Январь:</label> <input type="number" value="300"></div>
+        <div class="salary-input"><label>Февраль:</label> <input type="number" value="200"></div>
+        <div class="salary-input"><label>Март:</label> <input type="number" value="500"></div>
+        <div class="salary-input"><label>Апрель:</label> <input type="number" value="250"></div>
+        <div class="salary-input"><label>Май:</label> <input type="number" value="350"></div>
+        <div class="salary-input"><label>Июнь:</label> <input type="number" value="500"></div>
+        <input type="button" value="Вычислить" onclick="calculateAverage(this.form)">
+    </form>
+    Средняя зарплата: <input type="text" id="averageSalary" readonly>
+</body>
+</html>

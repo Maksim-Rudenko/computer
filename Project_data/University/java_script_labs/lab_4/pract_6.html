@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <title>Руденко Максим - Лабораторная работа 4 Задание 5</title>
+    <style>
+        #tableCell {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script>
+        function applySettings(form) {
+            let tableCell = document.getElementById('tableCell');
+
+            let alignValue = form.elements['align'].value;
+            let valignValue = form.elements['valign'].value;
+
+            tableCell.style.textAlign = alignValue;
+            tableCell.style.verticalAlign = valignValue;
+        }
+    </script>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td id="tableCell">Текст</td>
+        </tr>
+    </table>
+    <form name="tableSettingsForm">
+        <h3>Горизонтальное расположение текста</h3>
+        <input type="radio" name="align" value="left" checked> Left<br>
+        <input type="radio" name="align" value="center"> Center<br>
+        <input type="radio" name="align" value="right"> Right<br>
+
+        <h3>Вертикальное расположение текста</h3>
+        <input type="radio" name="valign" value="top" checked> Top<br>
+        <input type="radio" name="valign" value="middle"> Middle<br>
+        <input type="radio" name="valign" value="bottom"> Bottom<br>
+
+        <input type="button" value="Выполнить" onclick="applySettings(this.form)">
+    </form>
+</body>
+</html>
