@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.hidden {
+    display: none;
+}
+#registrationForm, #test, #result {
+    margin-top: 20px;
+}
+.salary-input {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin-bottom: 2px;
+    text-align: left;
+}
+.salary-input label {
+    width: 50%;
+}
+.salary-input input {
+    width: 50%;
+}
+.registration {
+    text-align: left;
+}
+.button-left {
+    float: left;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Тест: Умеете ли вы радоваться?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .hidden {
+            display: none;
+        }
+        #registrationForm, #test, #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="registrationForm">
+        <h2>Регистрация</h2>
+        <input type="text" id="surname" placeholder="Фамилия"><br>
+        <input type="text" id="name" placeholder="Имя"><br>
+        <input type="text" id="patronymic" placeholder="Отчество"><br>
+        <input type="number" id="age" placeholder="Возраст"><br>
+        <button onclick="register()">Регистрация</button>
+    </div>
+
+    <div id="test" class="hidden">
+        <h2>Тест: Умеете ли вы радоваться?</h2>
+        <p>Ответьте на вопросы "да" или "нет".</p>
+        <!-- Вопросы теста будут добавляться здесь динамически -->
+    </div>
+
+    <div id="result" class="hidden"></div>
+
+    <script>
+        let userData = {};
+        let questions = [
+            "Любите ли вы гулять?",
+            "Нравится ли вам встречать гостей?",
+            "С легкостью ли вы расплачиваетесь за друзей 'по мелочи'?",
+            "Всегда ли у вас в доме найдется что-то, чтобы угостить незваных гостей?",
+            "В компании с хорошими друзьями, в непринужденной обстановке вы можете выпить больше, чем следовало?"
+        ];
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function register() {
+            userData.surname = document.getElementById('surname').value;
+            userData.name = document.getElementById('name').value;
+            userData.patronymic = document.getElementById('patronymic').value;
+            userData.age = document.getElementById('age').value;
+
+            if (!userData.surname || !userData.name || !userData.patronymic || !userData.age) {
+                alert('Пожалуйста, заполните все поля регистрации.');
+                return;
+            }
+
+            document.getElementById('registrationForm').classList.add('hidden');
+            document.getElementById('test').classList.remove('hidden');
+            showQuestion();
+        }
+
+        function showQuestion() {
+            if (currentQuestionIndex < questions.length) {
+                let questionText = questions[currentQuestionIndex];
+                document.getElementById('test').innerHTML = `
+                    <p>${questionText}</p>
+                    <button onclick="answer('yes')">Да</button>
+                    <button onclick="answer('no')">Нет</button>
+                `;
+            } else {
+                finishTest();
+            }
+        }
+
+        function answer(response) {
+            if (response === 'yes') score++;
+            currentQuestionIndex++;
+            showQuestion();
+        }
+
+        function finishTest() {
+            document.getElementById('test').classList.add('hidden');
+            let resultText = score <= 2 ? 'хорошо' : 'отлично';
+            document.getElementById('result').classList.remove('hidden');
+            document.getElementById('result').innerHTML = `
+                <h2>Результат теста</h2>
+                <p>Фамилия: ${userData.surname}</p>
+                <p>Имя: ${userData.name}</p>
+                <p>Отчество: ${userData.patronymic}</p>
+                <p>Возраст: ${userData.age}</p>
+                <p>Ваш результат: ${resultText}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
