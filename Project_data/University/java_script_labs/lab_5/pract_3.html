@@ -12,9 +12,16 @@
     </style>
     <script>
         let questions = [
-            { num_question: '1', question: 'Вопрос 1', correctAnswer: 'A', answers: ['A', 'B', 'C', 'D'] },
-            { num_question: '2', question: 'Вопрос 2', correctAnswer: 'B', answers: ['A', 'B', 'C', 'D'] },
-            { num_question: '3', question: 'Вопрос 3', correctAnswer: 'C', answers: ['A', 'B', 'C', 'D'] },
+            { num_question: '1', question: 'Сколько всего океанов на нашей планете Земля?', correctAnswer: 'C', answers: ['A', 'B', 'C', 'D'], answers_to_view: ['A: 3', 'B: 4', 'C: 5', 'D: 6'] },
+            { num_question: '2', question: 'Какая страна является самой большой по занимаемой площади во всем мире?', correctAnswer: 'D', answers: ['A', 'B', 'C', 'D'], answers_to_view: ['A: Канада', 'B: США', 'C: Китай', 'D: Россия'] },
+            { num_question: '3', question: 'Какая из этих рек начинается в одной части света, а заканчивается в другой?', correctAnswer: 'A', answers: ['A', 'B', 'C', 'D'], answers_to_view: ['A: Урал', 'B: Дунай', 'C: Амур', 'D: Волга'] },
+            { num_question: '4', question: 'Назовите страну, которой принадлежат три города, расположенные на ее территории: Ариэль, Кирьят-Ата и Назарет.', correctAnswer: 'C', answers: ['A', 'B', 'C', 'D'], answers_to_view: ['A: Португалия', 'B: Барбадос', 'C: Израиль', 'D: Испания'] },
+            { num_question: '5', question: 'Это самый большой океан. Он омывает берега всех материков, кроме Африки и занимает 53% от всего мирового океана. Как он называется?', correctAnswer: 'A', answers: ['A', 'B', 'C', 'D'], answers_to_view: ['A: Тихий', 'B: Северный Ледовитый', 'C: Атлантический', 'D: Индийский'] },
+            { num_question: '6', question: 'Раньше этот российский город назывался Кёнисберг и относился к немецкой провинции. Как этот город называется сейчас?', correctAnswer: 'A', answers: ['A', 'B', 'C', 'D'], answers_to_view: ['A: Калининград', 'B: Красноярск', 'C: Краснодар', 'D: Красноуфимск'] },
+            { num_question: '7', question: 'С этим государством у России пролегает самая длинная сухопутная граница.', correctAnswer: 'C', answers: ['A', 'B', 'C', 'D'], answers_to_view: ['A: Монголия', 'B: Турция', 'C: Казахстан', 'D: Китай'] },
+            { num_question: '8', question: 'Этот океан по праву считается самым холодным. Температура его воды ы среднем равна -1,5 градуса, а в летние не поднимается выше +7 градусов.', correctAnswer: 'B', answers: ['A', 'B', 'C', 'D'], answers_to_view: ['A: Тихий', 'B: Северный Ледовитый', 'C: Атлантический', 'D: Индийский'] },
+            { num_question: '9', question: 'Суэцкий канал —судоходный канал в Египте, который соединяет Средиземное и Красное моря. Считается одним из самых длинных. Какова его длина?', correctAnswer: 'B', answers: ['A', 'B', 'C', 'D'], answers_to_view: ['A: 960 км', 'B: 160 км', 'C: 780 км', 'D: 520 км'] },
+            { num_question: '10', question: 'Как называется самая высокая в Мире гора?', correctAnswer: 'C', answers: ['A', 'B', 'C', 'D'], answers_to_view: ['A: Косцюшко', 'B: Эльбрус', 'C: Джомолунгма', 'D: Килиманджаро'] },
             // Добавьте остальные вопросы здесь
         ];
 
@@ -33,7 +40,7 @@
             for (let i = 0; i < questions.length; i++) {
                 let question = questions[i];
                 let startTime = new Date();
-                let answer = prompt(question.question + '\n' + question.answers.join('\n'));
+                let answer = prompt(question.question + '\n' + question.answers_to_view.join('\n'));
                 let endTime = new Date();
                 let timeSpent = (endTime - startTime) / 1000; // in seconds
                 totalTime += timeSpent;

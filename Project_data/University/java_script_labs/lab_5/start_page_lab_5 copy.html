@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Макет сайта</title>
+  <link rel="stylesheet" href="start_page_lab_5.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // При нажатии на ссылку "Задание 2"
+      $("a[href='pract_2.html']").click(function(event) {
+        event.preventDefault(); // Отменить стандартное поведение ссылки
+
+        var url = $(this).attr("href"); // Получить URL ссылки
+
+        // Загрузить содержимое страницы
+        $.ajax({
+          url: url,
+          success: function(data) {
+            // Вставить содержимое страницы в <div class="info">
+            $(".info").html(data);
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="images/logo_university.jpg" width="120" alt="Логотип">
+      <h1>Лабораторная работа №5</h1>
+    </div>
+    
+    <div class="menu">
+      <a href="pract_1.html" target="_blank">Задание 1</a>
+      <a href="pract_2.html">Задание 2</a>
+      <a href="pract_3.html">Задание 3</a>
+    </div>
+    <div class="info">
+      <p>На данной странице представлены задания по лабораторной работе</p>
+    </div>
+    <div class="footer">
+      <p>Руденко Максим Андреевич</p>
+      <p>Группа ЗИТ-11</p>
+      <p>Дата создания: 11 марта 2024</p>
+      <p>Email: maksim20014@hotmail.com</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,1 +1,1 @@
-print('hell0')
+print(7%5)
