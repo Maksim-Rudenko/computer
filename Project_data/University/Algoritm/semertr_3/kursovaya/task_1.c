@@ -4,6 +4,8 @@
 #include <ctype.h>
 #include <math.h>
 
+#define M_PI 3.14159265358979323846
+
 // Функция для проверки, является ли строка целым числом
 int is_integer(const char *str) {
     if (*str == '-' || *str == '+') str++; // Пропускаем знак числа
