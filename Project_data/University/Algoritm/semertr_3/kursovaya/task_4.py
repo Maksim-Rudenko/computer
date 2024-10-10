@@ -16,7 +16,10 @@ def compute_integral(func, a, b):
     result, error = integrate.quad(func, a, b)
     return result
 
+lower_base = int(input('Введите нижнее основание интеграла: '))
+upper_base = int(input('Введите верхнее основание интеграла: '))
+
 # Используем функции
-print("Интеграл f1 от 0 до 1: ", compute_integral(f1, 0, 1))
-print("Интеграл f2 от 0 до 1: ", compute_integral(f2, 0, 1))
-print("Интеграл f3 от 0 до 1: ", compute_integral(f3, 0, 1))
+print("Интеграл f1 от 0 до 1: ", compute_integral(f1, lower_base, upper_base))
+print("Интеграл f2 от 0 до 1: ", compute_integral(f2, lower_base, upper_base))
+print("Интеграл f3 от 0 до 1: ", compute_integral(f3, lower_base, upper_base))
