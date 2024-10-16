@@ -53,17 +53,19 @@ int main() {
         input[strcspn(input, "\n")] = 0; // Удаляем символ новой строки
 
         if (is_integer(input)){
-            printf("Вы ввели целое число: %d\n", atoi(input));
+            //printf("Значение радиуса шара: %d\n", atoi(input));
             valid = 1;
             r = atoi(input);
-            function(r, result);
-            printf("%f %f\n", result[0], result[1]);            
+            function(r, result);            
+            printf("Площадь поверхности шара: %f\n", result[0]);
+            printf("Объем шара: %f\n", result[1]);            
         } else if (is_float(input)) {
             printf("Вы ввели число с плавающей точкой: %f\n", atof(input));
             valid = 1;
             r = atof(input);
-            function(r, result);
-            printf("%f %f\n", result[0], result[1]);  
+            function(r, result);             
+            printf("Площадь поверхности шара: %f\n", result[0]);
+            printf("Объем шара: %f\n", result[1]);
         } 
           else {
             printf("Ошибка: введите корректное число.\n");
