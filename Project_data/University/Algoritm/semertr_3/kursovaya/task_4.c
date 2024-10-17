@@ -29,6 +29,7 @@ double compute_integral(double (*func)(double), double a, double b, int n) {
 
 int main() {
     double lower_base, upper_base;
+    int num_func;
     
     printf("Введите нижнее основание интеграла: ");
     scanf("%lf", &lower_base);
@@ -37,9 +38,21 @@ int main() {
     
     int n = 1000; // Количество разбиений для интегрирования
     
-    printf("Интеграл f1 от %.2f до %.2f: %.6f\n", lower_base, upper_base, compute_integral(f1, lower_base, upper_base, n));
-    printf("Интеграл f2 от %.2f до %.2f: %.6f\n", lower_base, upper_base, compute_integral(f2, lower_base, upper_base, n));
-    printf("Интеграл f3 от %.2f до %.2f: %.6f\n", lower_base, upper_base, compute_integral(f3, lower_base, upper_base, n));
+    printf("Выберите функцию, для которой будет расчитан интеграл (1-3): ");
+    scanf("%d", &num_func);
+
+    if (num_func == 1) {
+        printf("Интеграл f1 от %.2f до %.2f: %.6f\n", lower_base, upper_base, compute_integral(f1, lower_base, upper_base, n));
+    } else if (num_func == 2) {
+        printf("Интеграл f2 от %.2f до %.2f: %.6f\n", lower_base, upper_base, compute_integral(f2, lower_base, upper_base, n));
+    } else {
+        printf("Интеграл f3 от %.2f до %.2f: %.6f\n", lower_base, upper_base, compute_integral(f3, lower_base, upper_base, n));
+    }
+
+
+    //printf("Интеграл f1 от %.2f до %.2f: %.6f\n", lower_base, upper_base, compute_integral(f1, lower_base, upper_base, n));
+    //printf("Интеграл f2 от %.2f до %.2f: %.6f\n", lower_base, upper_base, compute_integral(f2, lower_base, upper_base, n));
+    //printf("Интеграл f3 от %.2f до %.2f: %.6f\n", lower_base, upper_base, compute_integral(f3, lower_base, upper_base, n));
     
     return 0;
 }
