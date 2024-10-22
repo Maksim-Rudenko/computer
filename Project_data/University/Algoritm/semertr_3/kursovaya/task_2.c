@@ -7,7 +7,7 @@ int count_negatives(int arr[], int size) {
     if (size == 0) {
         return count;
     }
-    // Смотря что считать четным. 0 как четное или это первый элемент массива => нечетный
+    // Считаем, что элемент с индексом 0 - нечетный
     for (int i = 1; i < size; i += 2) {
         if (arr[i] < 0) {
             count++;
@@ -53,7 +53,7 @@ int main() {
     int a = count_negatives(T, size_T);
     int b = count_negatives(P, size_P);
     int c = count_negatives(Q, size_Q);
-
+    
     // Расчет функции L    
     L = 2.3 * sin(a) - pow(cos(b), 2) + 3.3 * c;
     printf("L = %lf\n", L);

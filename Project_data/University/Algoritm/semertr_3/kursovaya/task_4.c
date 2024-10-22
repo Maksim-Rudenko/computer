@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
 
-// Определяем функции
+// Определяем заданные функции
 double f1(double x) {
     return x / (x * x + 6 * x + 1);
 }
@@ -29,8 +30,9 @@ double compute_integral(double (*func)(double), double a, double b, int n) {
 
 int main() {
     double lower_base, upper_base;
-    int num_func;
+    char num_func[100];
     
+    // Ввод пределов интегрирования
     printf("Введите нижнее основание интеграла: ");
     scanf("%lf", &lower_base);
     printf("Введите верхнее основание интеграла: ");
@@ -38,12 +40,13 @@ int main() {
     
     int n = 1000; // Количество разбиений для интегрирования
     
-    printf("Выберите функцию, для которой будет расчитан интеграл (1-3): ");
-    scanf("%d", &num_func);
+    // Выбор функции интегрирования
+    printf("Выберите функцию, для которой будет расчитан интеграл (f1, f2, f3): ");
+    scanf("%s", num_func);
 
-    if (num_func == 1) {
+    if (strcmp(num_func, "f1") == 0) {
         printf("Интеграл f1 от %.2f до %.2f: %.6f\n", lower_base, upper_base, compute_integral(f1, lower_base, upper_base, n));
-    } else if (num_func == 2) {
+    } else if (strcmp(num_func, "f2") == 0) {
         printf("Интеграл f2 от %.2f до %.2f: %.6f\n", lower_base, upper_base, compute_integral(f2, lower_base, upper_base, n));
     } else {
         printf("Интеграл f3 от %.2f до %.2f: %.6f\n", lower_base, upper_base, compute_integral(f3, lower_base, upper_base, n));

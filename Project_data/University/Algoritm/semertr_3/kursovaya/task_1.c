@@ -8,7 +8,7 @@
 
 // Функция для проверки, является ли строка целым числом
 int is_integer(const char *str) {
-    if (*str == '-' || *str == '+') str++; // Пропускаем знак числа
+    //if (*str == '-' || *str == '+') return 0; // Пропускаем знак числа
     if (!*str) return 0; // Пустая строка после знака
     while (*str) {
         if (!isdigit(*str)) return 0; // Если не цифра, возвращаем 0
@@ -20,7 +20,7 @@ int is_integer(const char *str) {
 // Функция для проверки, является ли строка числом с плавающей точкой
 int is_float(const char *str) {
     int has_dot = 0;
-    if (*str == '-' || *str == '+') str++; // Пропускаем знак числа
+    //if (*str == '-' || *str == '+') str++; // Пропускаем знак числа
     if (!*str) return 0; // Пустая строка после знака
     while (*str) {
         if (*str == '.') {
