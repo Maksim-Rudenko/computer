@@ -10,6 +10,9 @@
 int is_integer(const char *str) {
     //if (*str == '-' || *str == '+') return 0; // Пропускаем знак числа
     if (!*str) return 0; // Пустая строка после знака
+    if(strchr(str, '.') != NULL) {
+        return 0;
+    }
     while (*str) {
         if (!isdigit(*str)) return 0; // Если не цифра, возвращаем 0
         str++;
@@ -45,7 +48,7 @@ int main() {
     int r;
     double result[2];
     char input[100];
-    int valid = 0;    
+    int valid = 0;
 
     while (!valid) {
         printf("Введите число: ");

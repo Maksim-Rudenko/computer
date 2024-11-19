@@ -8,7 +8,7 @@ double f1(double x) {
 }
 
 double f2(double x) {
-    return pow(10, 0.01 * x) * cos(0.125 * x);
+    return pow(10, -0.01 * x) * cos(0.125 * x);
 }
 
 double f3(double x) {
@@ -50,12 +50,7 @@ int main() {
         printf("Интеграл f2 от %.2f до %.2f: %.6f\n", lower_base, upper_base, compute_integral(f2, lower_base, upper_base, n));
     } else {
         printf("Интеграл f3 от %.2f до %.2f: %.6f\n", lower_base, upper_base, compute_integral(f3, lower_base, upper_base, n));
-    }
-
-
-    //printf("Интеграл f1 от %.2f до %.2f: %.6f\n", lower_base, upper_base, compute_integral(f1, lower_base, upper_base, n));
-    //printf("Интеграл f2 от %.2f до %.2f: %.6f\n", lower_base, upper_base, compute_integral(f2, lower_base, upper_base, n));
-    //printf("Интеграл f3 от %.2f до %.2f: %.6f\n", lower_base, upper_base, compute_integral(f3, lower_base, upper_base, n));
+    }   
     
     return 0;
 }
