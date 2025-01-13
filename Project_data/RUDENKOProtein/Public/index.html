@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.cdnfonts.com/css/sf-collegiate" rel="stylesheet">
+    <link type="image/icon" rel="shortcut icon" href="img/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-pzjw8f+ua7Kw1TIq0Zf+Q44JKq1blTOa3Pf6n0vVz8XtbD+L33FlkURvpoO9TIFp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <title>S.Nutrition.by</title>
+</head>
+<body>
+<header>
+    <div class="container">
+        <a id="top" class="logo">S.Nutrition.by</a>
+        <nav>
+            <ul>
+                <li><a href="#catalogue"><button type="button">Наши товары</button></a></li>
+                <li><a href="#deliv"><button type="button">Обратная связь</button></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main>
+    <section class="banner_carrousel">
+        <div class="container">
+            <div class="carousel-container">
+                <div class="carousel">
+                    <img src="img/background.jpg.webp" class="active" alt="Image 1">
+                    <img src="img/background2.jpg.webp" alt="Image 2"
+                         class="active">
+                    <img src="img/background3.jpg" alt="Image 3">
+                </div>
+            </div>
+            <h1>Спортивное питание для тебя</h1>
+            <p>Доставляем в любую точку Республики Беларусь</p>
+            <a href="#catalogue">
+                <button id="btn_ctg" type="button">Товары наличия</button></a>
+        </div>
+    </section>
+    <section class="advantages">
+        <div class="container">
+
+            <div class="advantages-list">
+                <div class="advantage1">
+                    <img src="img/consul.png" width="120" height="120" alt="Бонусы за покупку">
+                    <h3>Подберем для Вас наиболее подходящий товар</h3>
+                    <p>Наши консультанты имеют опыт в подборе добавок и могут помочь и Вам</p>
+                </div>
+                <div class="advantage2">
+                <img src="img/orig.png" width="100" height="100" alt="Только оригинальный товар">
+                <h3>Только оригинальный товар</h3>
+                <p>Наш товар поставляется только от проверенных дистрибьюторов</p>
+            </div>
+                <div class="advantage3">
+                    <img src="img/biceps.png" width="100" height="100">
+                    <h3>Эффективный набор мышечной массы</h3>
+                    <p>Получение белка в концентрированном виде без вреда для здоровья</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="catalog">
+        <div class="container" id="catalogue">
+            <h2>Каталог</h2>
+            <div class="categories">
+            </div>
+            <div class="container">
+            </div>
+            <div class="products">
+                <div class="product" id="bq1" data-id="bq1" data-name="Кофейный протеин" data-quantity="0">
+                    <img class="protein_img" src="img/protein1.png" width="190" height="150" alt="Протеин">
+                    <h3>Кофейный протеин</h3>
+                    <p>18.99 BYN</p>
+                    <button class="buy_button" id="bt">КУПИТЬ</button>
+                </div>
+                <div class="product" id="bq2" data-id="bq2" data-name="Шоколадный протеин" data-quantity="0">
+                    <img class="protein_img" src="img/protein2.png" width="190" height="150" alt="Протеин">
+                    <h3>Шоколадный протеин</h3>
+                    <p>18.99 BYN</p>
+                    <button class="buy_button" id="bt"">Купить</button>
+                </div>
+                <div class="product" id="bq3" id="bt" data-name="Ванильный протеин" data-quantity="0">
+                    <img class="protein_img" src="img/protein3.png" width="190" height="150" alt="Протеин">
+                    <h3>Ванильный протеин</h3>
+                    <p>18.99 BYN</p>
+                    <button class="buy_button" data-product-id="bq3">КУПИТЬ</button>
+                </div>
+                <div class="product" id="bq4" id="bt" data-name="BCA"-quantity="0">
+                    <img class="protein_img" src="img/bca.png" width="190" height="150" alt="БЦА">
+                    <h3>BCA-добавка</h3>
+                    <p>39.99 BYN</p>
+                    <button class="buy_button" data-product-id="BCA">КУПИТЬ</button>
+                </div>
+            </div>
+    </section>
+    </section>
+
+    <section class="delivery">
+        <div class="container" id="deliv">
+            <h2>Оставьте заявку на обратную связь</h2>
+            <form id="order-form">
+                <div class="form-group">
+                    <label for="name">Ваше имя:</label>
+                    <input type="text" class="form-control" id="name" placeholder="Введите ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон:</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="Введите ваш телефон" required>
+                </div>
+                <button id="submit_button" type="submit" class="btn">Отправить заявку</button>
+            </form>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-section">
+            <h2>S.Nutrition.by</h2>
+            <p>© 2025 Все права защищены</p>
+</footer>
+
+<button onclick="topFunction()" id="btntotop" title="Go to top">↑</button>
+</body>
+</html>
