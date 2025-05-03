@@ -1,22 +1,40 @@
-input_str = input()
-num_days = int(input_str)
+def clean_apartment(N, M, x, y, grid):
+    visited = [[0] * M for _ in range(N)]  # Массив для отслеживания очищенных клеток
+    total_time = 0
+    cleaned_cells = 0
 
-input_array = input()
-arr = [str(x) for x in input_array.split()]
+    def dfs(i, j):
+        nonlocal total_time, cleaned_cells
+        # Проверка границ и условий
+        if i < 0 or i >= N or j < 0 or j >= M:
+            return
+        if grid[i][j] == 1 or visited[i][j] == 1:
+            return
+        
+        # Помечаем клетку как посещенную
+        visited[i][j] = 1
+        cleaned_cells += 1
+        total_time += y  # Время на очистку
 
-def solve(times):
-    def to_minutes(t):
-        hours, minutes = t.split(':')
-        return int(hours) * 60 + int(minutes)
-    
-    int_times = sorted(map(to_minutes, times))
-    min_diff = 24 * 60 + int_times[0] - int_times[-1]
-    print(min_diff)
-    prev = int_times[0]
-    for i in range(1, len(int_times)):
-        curr = int_times[i]
-        min_diff = min(min_diff, curr - prev)
-        prev = curr
-    return min_diff
+        # Перемещение к соседним клеткам
+        for di, dj in [(0, 1), (1, 0), (0, -1), (-1, 0)]:
+            total_time += x  # Время на перемещение
+            dfs(i + di, j + dj)
 
-print(solve(arr))
+    # Начинаем с первой клетки (0, 0)
+    dfs(0, 0)
+
+    return total_time, cleaned_cells
+
+# Пример использования
+if __name__ == "__main__":
+    # Ввод данных
+    N, M, x, y = map(int, input().split())
+    grid = []    
+    for _ in range(M):
+        row = list(map(int, input().split()))
+        grid.append(row)
+
+    total_time, cleaned_cells = clean_apartment(N, M, x, y, grid)
+    print(f"Общее время: {total_time} секунд")
+    print(f"Количество очищенных клеток: {cleaned_cells}")

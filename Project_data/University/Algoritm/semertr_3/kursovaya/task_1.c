@@ -20,6 +20,7 @@ int is_integer(const char *str) {
     return 1;
 }
 
+
 // Функция для проверки, является ли строка числом с плавающей точкой
 int is_float(const char *str) {
     int has_dot = 0;
@@ -51,7 +52,8 @@ int main() {
     int valid = 0;
 
     while (!valid) {
-        printf("Введите число: ");
+        //printf("Введите число: ");
+        printf("Enter a number: ");
         fgets(input, sizeof(input), stdin);
         input[strcspn(input, "\n")] = 0; // Удаляем символ новой строки
 
@@ -60,18 +62,23 @@ int main() {
             valid = 1;
             r = atoi(input);
             function(r, result);            
-            printf("Площадь поверхности шара: %f\n", result[0]);
-            printf("Объем шара: %f\n", result[1]);            
+            //printf("Площадь поверхности шара: %f\n", result[0]);
+            //printf("Объем шара: %f\n", result[1]);            
+            printf("S: %f\n", result[0]);
+            printf("V: %f\n", result[1]);  
         } else if (is_float(input)) {
-            printf("Вы ввели число с плавающей точкой: %f\n", atof(input));
+            //printf("Вы ввели число с плавающей точкой: %f\n", atof(input));
+            printf("Enter a number: ");
             valid = 1;
             r = atof(input);
             function(r, result);             
-            printf("Площадь поверхности шара: %f\n", result[0]);
-            printf("Объем шара: %f\n", result[1]);
+            //printf("Площадь поверхности шара: %f\n", result[0]);
+            //printf("Объем шара: %f\n", result[1]);
+             printf("S: %f\n", result[0]);
+            printf("V: %f\n", result[1]);  
         } 
           else {
-            printf("Ошибка: введите корректное число.\n");
+            printf("Error enter correct number.\n");
         }
     }
 
