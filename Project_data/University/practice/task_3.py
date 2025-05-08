@@ -170,8 +170,13 @@ match method:
             # Вычисляем сумму абсолютных значений для каждого столбца
             column_sums = [(j, sum(abs(matrix[i][j]) for i in range(rows))) for j in range(cols)]
 
-            # Сортируем индексы столбцов по убыванию сумм
-            column_sums.sort(key=lambda x: x[1], reverse=True)
+            # Сортируем индексы столбцов по убыванию сумм            
+            for i in range(len(column_sums)):
+                max_index = i
+                for j in range(i + 1, len(column_sums)):
+                    if column_sums[j][1] > column_sums[max_index][1]:
+                        max_index = j
+                column_sums[i], column_sums[max_index] = column_sums[max_index], column_sums[i]
 
             # Переставляем столбцы по отсортированному порядку
             sorted_matrix = [[matrix[i][j] for j, _ in column_sums] for i in range(rows)]
