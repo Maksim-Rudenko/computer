@@ -144,12 +144,18 @@ match method:
             for num in arr:
                 key_dict[num].append(num)
 
-            # Сортируем ключи в порядке невозрастания
-            sorted_keys = sorted(key_dict.keys(), reverse=True)
+            # Сортируем ключи методом выбора
+            keys = list(key_dict.keys())
+            for i in range(len(keys)):
+                max_index = i
+                for j in range(i + 1, len(keys)):
+                    if keys[j] > keys[max_index]:  # Выбираем максимальный ключ
+                        max_index = j
+                keys[i], keys[max_index] = keys[max_index], keys[i]  # Перемещаем максимальный ключ в начало
 
             # Собираем элементы обратно в отсортированный массив
             sorted_arr = []
-            for key in sorted_keys:
+            for key in keys:
                 sorted_arr.extend(key_dict[key])  # Добавляем элементы из групп
 
             return sorted_arr
