@@ -7,14 +7,14 @@ def splash_screen():
     splash.title("Запуск приложения")
     splash.geometry("300x150")
     
-    label = tk.Label(splash, text="Запуск приложения...", font=("Arial", 12))
+    label = tk.Label(splash, text="Руденко Максим Андреевич ЗИТ-21\n Лабораторная работа 1\nЗапуск приложения...", font=("Arial", 12))
     label.pack(expand=True)
 
     splash.update()
     
     # Симуляция процесса загрузки
     for i in range(1, 101, 10):
-        label.config(text=f"Загрузка... {i}%")
+        label.config(text=f"Руденко Максим Андреевич ЗИТ-21\n Лабораторная работа 1\nЗагрузка... {i}%")
         splash.update()
         time.sleep(0.3)  # Задержка для имитации загрузки
 

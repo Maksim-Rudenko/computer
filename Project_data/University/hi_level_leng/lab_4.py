@@ -9,13 +9,13 @@ def open_article_window():
     article_window = QWidget()
     #article_window.setWindowIcon(QIcon("D:\\icon.png"))
     article_window.setWindowTitle("Успеваемость студентов")
-    article_window.setGeometry(200, 200, 600, 400)
+    article_window.setGeometry(300, 300, 750, 500)
     layout = QVBoxLayout()
 
 
     # Обычный список (группы)
     list_view = QListView()
-    list_model = QStringListModel(["Группа ИТ-101", "Группа ИТ-102", "Группа ИТ-103", "Группа ЗИТ-21"])
+    list_model = QStringListModel(["Группа ИТ-101", "Группа ИТ-102", "Группа ИТ-103", "Группа ЗИТ-21", "Группа ЭТ-101", "Группа ЭТ-102", "Группа АВТ-21",])
     list_view.setModel(list_model)
 
     # Раскрывающийся список (предметы)
@@ -26,6 +26,7 @@ def open_article_window():
     tree_view = QTreeView()
     tree_model = QStandardItemModel()
     root_node = tree_model.invisibleRootItem()
+    tree_view.setHeaderHidden(True)
     item1 = QStandardItem("Группа ИТ-101")
     item1.appendRow(QStandardItem("Высшая математик"))
     item1.appendRow(QStandardItem("Политэкономия"))
@@ -91,15 +92,12 @@ main_window.setWindowTitle("Руденко Максим Андреевич ЗИ�
 #main_window.setWindowIcon(QIcon("D:\\icon.png"))
 
 
-main_window.setGeometry(100, 100, 400, 400)
+main_window.setGeometry(150, 150, 500, 500)
 
 central_widget = QWidget()
 layout = QVBoxLayout()
 
-label = QLabel("Лабораторная работа №4\n"
-                            "Списки и таблицы.\n"
-                            "Выполнил студент группы ЗИТ-21\n"
-                            "Руденко Максим Андреевич")
+label = QLabel("Руденко Максим Андреевич ЗИТ-21\n Лабораторная работа 4")
 label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 label.setFont(QFont("Arial", 14, QFont.Weight.Bold))
 layout.addWidget(label)

@@ -1,38 +1,31 @@
 import tkinter as tk
-from tkinter import Toplevel, Label, Entry, Button, messagebox, ttk
+from tkinter import Toplevel, Label, Entry, Button, messagebox
 from math import log, sqrt
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-
-from tkcalendar import DateEntry
-
 
 # Функция для открытия окна с анкетой
 def open_form_window():
     form_window = Toplevel(root)
     form_window.title("Анкета")
-    form_window.geometry("350x250")
+    form_window.geometry("300x200")
 
     Label(form_window, text="ФИО:").grid(row=0, column=0, padx=5, pady=5)
     fio_entry = Entry(form_window)
     fio_entry.grid(row=0, column=1, padx=5, pady=5)
 
-    Label(form_window, text="Дата рождения:").grid(row=1, column=0, padx=5, pady=5, sticky="w")
-    dob_entry = DateEntry(form_window, width=17, selectmode="day", year=2000, month=1, day=1)
+    Label(form_window, text="Дата рождения:").grid(row=1, column=0, padx=5, pady=5)
+    dob_entry = Entry(form_window)
     dob_entry.grid(row=1, column=1, padx=5, pady=5)
 
     Label(form_window, text="Пол:").grid(row=2, column=0, padx=5, pady=5)
-
-    # Выпадающий список для выбора пола
-    gender_options = ["Мужской", "Женский"]
-    gender_combobox = ttk.Combobox(form_window, values=gender_options, state="readonly")
-    gender_combobox.grid(row=2, column=1, padx=5, pady=5)
-    gender_combobox.set(gender_options[0])  # Устанавливаем значение по умолчанию
+    gender_entry = Entry(form_window)
+    gender_entry.grid(row=2, column=1, padx=5, pady=5)
 
     def submit():
         print("ФИО:", fio_entry.get())
-        print("Дата рождения:", dob_entry.get())  # Получаем выбранную дату
-        print("Пол:", gender_combobox.get())  # Получаем выбранный пол
+        print("Дата рождения:", dob_entry.get())
+        print("Пол:", gender_entry.get())
         form_window.destroy()
 
     Button(form_window, text="Отправить", command=submit).grid(row=3, columnspan=2, pady=10)
@@ -57,7 +50,9 @@ def open_function_window():
     def calculate():
         try:
             x = float(x_entry.get())
-                        
+            if x == 0:
+                raise ValueError("X не может быть 0!")
+            
             if x < -4:
                 y = (-2)
             elif x < 0:
@@ -190,7 +185,7 @@ root = tk.Tk()
 root.title("Руденко Максим Андреевич ЗИТ-21")
 root.geometry("400x300")
 
-Label(root, text="Руденко Максим Андреевич ЗИТ-21\n Лабораторная работа 3", font=("Arial", 18)).pack(pady=20)
+Label(root, text="Привет", font=("Arial", 18)).pack(pady=20)
 
 def on_enter(e, btn, text):
     btn.config(text=text)
