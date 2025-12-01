@@ -1,7 +1,8 @@
 import tkinter as tk
-from tkinter import Toplevel, Label, Entry, Button, messagebox, ttk
+from tkinter import Toplevel, Label, Entry, Button, messagebox, ttk, IntVar, Checkbutton, Scale
 from math import log, sqrt
 import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 from tkcalendar import DateEntry
@@ -11,7 +12,7 @@ from tkcalendar import DateEntry
 def open_form_window():
     form_window = Toplevel(root)
     form_window.title("Анкета")
-    form_window.geometry("350x250")
+    form_window.geometry("350x250+400+200")
 
     Label(form_window, text="ФИО:").grid(row=0, column=0, padx=5, pady=5)
     fio_entry = Entry(form_window)
@@ -29,19 +30,31 @@ def open_form_window():
     gender_combobox.grid(row=2, column=1, padx=5, pady=5)
     gender_combobox.set(gender_options[0])  # Устанавливаем значение по умолчанию
 
+    # Круговая шкала с ползунком
+    Label(form_window, text="Уровень удовлетворенности:").grid(row=3, column=0, padx=5, pady=5, sticky="w")
+    satisfaction_scale = Scale(form_window, from_=0, to=100, orient="horizontal")
+    satisfaction_scale.grid(row=3, column=1, padx=5, pady=5)
+
+    # Флажок (Checkbox)
+    agreement_var = IntVar()
+    check_btn = Checkbutton(form_window, text="Согласен на обработку данных", variable=agreement_var)
+    check_btn.grid(row=4, columnspan=2, pady=5)
+
     def submit():
-        print("ФИО:", fio_entry.get())
+        print("ФИО:", fio_entry.get()) # Получаем ФИО
         print("Дата рождения:", dob_entry.get())  # Получаем выбранную дату
         print("Пол:", gender_combobox.get())  # Получаем выбранный пол
+        print("Уровень удовлетворенности:", satisfaction_scale.get()) # Получаем уровень удовлетворенности
+        print("Согласие на обработку:", "Да" if agreement_var.get() else "Нет") # Получаем согласие на обработку данных
         form_window.destroy()
 
-    Button(form_window, text="Отправить", command=submit).grid(row=3, columnspan=2, pady=10)
+    Button(form_window, text="Отправить", command=submit).grid(row=5, columnspan=2, pady=10)
 
 # Функция для окна с вычислением функции
 def open_function_window():
     func_window = Toplevel(root)
-    func_window.title("Вычисление функции")
-    func_window.geometry("500x400")
+    func_window.title("Вычисление значения функции")
+    func_window.geometry("500x400+400+200")
 
     Label(func_window, text="Введите X:").pack(pady=5)
     x_entry = Entry(func_window)
@@ -58,14 +71,16 @@ def open_function_window():
         try:
             x = float(x_entry.get())
                         
-            if x < -4:
-                y = (-2)
-            elif x < 0:
-                y = (x / 4)
-            elif x < 2:
-                y = (x ** 2)
+            if x <= -4:
+                y = -3
+            elif x <= -3:
+                y = 2 * x + 8
+            elif x <= 3:
+                y = sqrt(9 - pow(x, 2))
+            elif x <= 8:
+                y = 0.6 * (x - 3)
             else:
-                y = (-0.5 * x + 5)     
+                y = 3   
 
             y_label.config(text=f"Значение Y: {y:.2f}")
 
@@ -74,14 +89,16 @@ def open_function_window():
             y_vals = []  # Создаем пустой список для значений y
 
             for x_value in x_vals:
-                if x_value < -4:
-                    y_value = -2
-                elif x_value < 0:
-                    y_value = x_value / 4
-                elif x_value < 2:
-                    y_value = x_value ** 2
+                if x_value <= -4:
+                    y_value = -3
+                elif x_value <= -3:
+                    y_value = 2 * x_value + 8
+                elif x_value <= 3:
+                    y_value = sqrt(9 - pow(x_value, 2))
+                elif x_value <= 8:
+                    y_value = 0.6 * (x_value - 3)
                 else:
-                    y_value = -0.5 * x_value + 5
+                    y_value = 3   
 
                 y_vals.append(y_value)  # Добавляем y в массив
             
@@ -107,8 +124,8 @@ def open_function_window():
 # Функция для окна проверки попадания точки в кольцо
 def open_ring_window():
     ring_window = Toplevel(root)
-    ring_window.title("Проверка точки в кольце")
-    ring_window.geometry("500x400")
+    ring_window.title("Нахождение точки в заданном секторе")
+    ring_window.geometry("500x400+400+200")
 
     Label(ring_window, text="Введите X:").pack(pady=5)
     x_entry = Entry(ring_window)
@@ -118,11 +135,11 @@ def open_ring_window():
     y_entry = Entry(ring_window)
     y_entry.pack()
 
-    Label(ring_window, text="Введите R1 (меньший радиус):").pack(pady=5)
+    Label(ring_window, text="Введите R1 (первый радиус полукруга):").pack(pady=5)
     r1_entry = Entry(ring_window)
     r1_entry.pack()
 
-    Label(ring_window, text="Введите R2 (больший радиус):").pack(pady=5)
+    Label(ring_window, text="Введите R2 (второй радиус окружности):").pack(pady=5)
     r2_entry = Entry(ring_window)
     r2_entry.pack()
 
@@ -148,12 +165,10 @@ def open_ring_window():
             r1 = float(r1_entry.get())
             r2 = float(r2_entry.get())
 
-            if r1 <= 0 or r2 <= 0 or r1 >= r2:
+            if r1 <= 0 or r2 <= 0:
                 raise ValueError("Введите корректные радиусы!")
-
-            dist = sqrt(x**2 + y**2)
-
-            if r1 < dist < r2 and ((x >= 0 and y >= 0) or (x <= 0 and y <= 0)):
+            
+            if (((x - r1) ** 2 + y ** 2 <= r1 ** 2) and (y >= 0) and (x >= 0)) or (((x + r2) ** 2 + (y + r2) ** 2 >= r2 ** 2) and (abs(y) <= r2) and (abs(x) <= r2) and (x < 0) and (y < 0)):
                 result_label.config(text="Точка ВНУТРИ сектора")
                 color = "green"
             else:
@@ -161,13 +176,16 @@ def open_ring_window():
                 color = "red"
 
             ax.clear()
-            ax.set_xlim(-r2 - 1, r2 + 1)
-            ax.set_ylim(-r2 - 1, r2 + 1)
 
-            circle_outer = plt.Circle((0, 0), r2, color="blue", fill=False)
-            circle_inner = plt.Circle((0, 0), r1, color="black", fill=False)
-            ax.add_patch(circle_outer)
-            ax.add_patch(circle_inner)
+            lim = r1 * 2 if r1 > r2 else r2 * 2 # Установим лимит по отображению осей
+
+            ax.set_xlim(-lim, lim)
+            ax.set_ylim(-lim, lim)
+
+            circle_left_full = plt.Circle((-r2, -r2), r2, color="blue", fill=False)            
+            circle_right_half = mpatches.Arc((r1, 0), 2*r1, 2*r1, angle=0, theta1=0, theta2=180, color="black", linewidth=2)
+            ax.add_patch(circle_left_full)
+            ax.add_patch(circle_right_half)
             ax.scatter(x, y, color=color, label="Точка")
             ax.legend()
             ax.grid()
@@ -187,10 +205,10 @@ def open_ring_window():
 
 # Основное окно
 root = tk.Tk()
-root.title("Руденко Максим Андреевич ЗИТ-21")
-root.geometry("400x300")
+root.title("Ефименко Милана Викторовна ЗИТ-21")
+root.geometry("500x350+400+200")
 
-Label(root, text="Руденко Максим Андреевич ЗИТ-21\n Лабораторная работа 3", font=("Arial", 18)).pack(pady=20)
+Label(root, text="Ефименко Милана Викторовна ЗИТ-21\n Лабораторная работа 3", font=("Arial", 18)).pack(pady=20)
 
 def on_enter(e, btn, text):
     btn.config(text=text)
@@ -200,18 +218,18 @@ def on_leave(e, btn, original_text):
 
 btn1 = Button(root, text="Открыть анкету", command=open_form_window)
 btn1.pack(pady=10)
-btn1.bind("<Enter>", lambda e: on_enter(e, btn1, "Заполните анкету"))
+btn1.bind("<Enter>", lambda e: on_enter(e, btn1, "Заполнить анкету"))
 btn1.bind("<Leave>", lambda e: on_leave(e, btn1, "Открыть анкету"))
 
-btn2 = Button(root, text="Открыть окно вычислений", command=open_function_window)
+btn2 = Button(root, text="Открыть окно расчета функции", command=open_function_window)
 btn2.pack(pady=10)
 btn2.bind("<Enter>", lambda e: on_enter(e, btn2, "Ввести X, рассчитать Y"))
-btn2.bind("<Leave>", lambda e: on_leave(e, btn2, "Открыть окно вычислений"))
+btn2.bind("<Leave>", lambda e: on_leave(e, btn2, "Открыть окно расчета функции"))
 
-btn3 = Button(root, text="Проверить точку", command=open_ring_window)
+btn3 = Button(root, text="Проверить положение точки", command=open_ring_window)
 btn3.pack(pady=10)
 btn3.bind("<Enter>", lambda e: on_enter(e, btn3, "Введите координаты точки"))
-btn3.bind("<Leave>", lambda e: on_leave(e, btn3, "Проверить точку"))
+btn3.bind("<Leave>", lambda e: on_leave(e, btn3, "Проверить положение точки"))
 
 # Добавляем кнопку завершения программы в главное окно
 btn_exit = Button(root, text="Завершить программу", command=root.quit)

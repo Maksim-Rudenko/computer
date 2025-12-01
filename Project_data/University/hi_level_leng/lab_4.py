@@ -88,7 +88,7 @@ def open_article_window():
 
 app = QApplication(sys.argv)
 main_window = QMainWindow()
-main_window.setWindowTitle("Руденко Максим Андреевич ЗИТ-21")
+main_window.setWindowTitle("Ефименко Милана Викторовна ЗИТ-21")
 #main_window.setWindowIcon(QIcon("D:\\icon.png"))
 
 
@@ -97,7 +97,7 @@ main_window.setGeometry(150, 150, 500, 500)
 central_widget = QWidget()
 layout = QVBoxLayout()
 
-label = QLabel("Руденко Максим Андреевич ЗИТ-21\n Лабораторная работа 4")
+label = QLabel("Ефименко Милана Викторовна ЗИТ-21\n Лабораторная работа 4")
 label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 label.setFont(QFont("Arial", 14, QFont.Weight.Bold))
 layout.addWidget(label)

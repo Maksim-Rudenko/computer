@@ -5,10 +5,10 @@ class MainApplication:
     """Основной класс приложения."""
     def __init__(self, root):
         self.root = root
-        self.root.title("Руденко Максим Андреевич")
+        self.root.title("Ефименко Милана Викторовна")
         self.root.geometry("400x200")
 
-        label = tk.Label(self.root, text="Добро пожаловать!", font=("Arial", 16))
+        label = tk.Label(self.root, text="Окно загружено", font=("Arial", 16))
         label.pack(expand=True)
 
     def run(self):

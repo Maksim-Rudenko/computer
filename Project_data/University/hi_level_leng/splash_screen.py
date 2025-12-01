@@ -11,7 +11,7 @@ class SplashScreen:
         self.splash.title("Запуск приложения")
         self.splash.geometry("300x150")
 
-        self.label = tk.Label(self.splash, text="Запуск приложения...", font=("Arial", 12))
+        self.label = tk.Label(self.splash, text="Ефименко Милана Викторовна ЗИТ-21\n Лабораторная работа 1\nЗапуск приложения...", font=("Arial", 12))
         self.label.pack(expand=True)
 
         self.splash.update()
@@ -20,7 +20,7 @@ class SplashScreen:
     def run_loading_animation(self):
         """Метод для имитации процесса загрузки."""
         for i in range(1, 101, 10):
-            self.label.config(text=f"Руденко Максим Андреевич ЗИТ-21\n Лабораторная работа 1\nЗагрузка... {i}%")
+            self.label.config(text=f"Ефименко Милана Викторовна ЗИТ-21\n Лабораторная работа 1\nЗагрузка... {i}%")
             self.splash.update()
             time.sleep(0.3)
 
